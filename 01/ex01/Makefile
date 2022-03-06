@@ -6,7 +6,7 @@
 #    By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/06 10:43:35 by ugdaniel          #+#    #+#              #
-#    Updated: 2022/03/06 13:14:51 by ugdaniel         ###   ########.fr        #
+#    Updated: 2022/03/06 14:32:57 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-
-norme:
-	@python3 -m norminette
 
 .PHONY: all clean fclean re
