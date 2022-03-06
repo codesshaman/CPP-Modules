@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 20:44:19 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/04 21:29:13 by ugdaniel         ###   ########.fr       */
+/*   Created: 2022/02/21 12:09:05 by ugdaniel          #+#    #+#             */
+/*   Updated: 2022/02/24 16:00:55 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PhoneBook.hpp"
 #include <iostream>
 #include <string>
 
-int	main(int argc, const char **argv)
+int	main(void)
 {
-	if (argc > 1)
+	PhoneBook	phonebook;
+	std::string	line;
+
+	while (std::cout << "PhoneBook> " && std::getline(std::cin, line))
 	{
-		for (int i = 1; i < argc; i++)
-		{
-			std::string str(argv[i]);
-			for (size_t j = 0; j < str.length(); j++)
-				std::cout << (char)std::toupper(str[j]);
-		}
+		if (std::cin.eof())
+			break ;
+		if (line == "ADD")
+			phonebook.add_contact();
+		else if (line == "SEARCH")
+			phonebook.search_contact();
+		else if (line == "EXIT")
+			return (0);
 	}
-	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << std::endl;
+	std::cout << "\033[2K\rPhoneBook EXIT" << std::endl;
 	return (0);
 }
