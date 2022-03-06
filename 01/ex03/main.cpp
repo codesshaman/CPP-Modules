@@ -5,27 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 14:34:31 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/06 17:05:05 by ugdaniel         ###   ########.fr       */
+/*   Created: 2022/03/06 17:07:26 by ugdaniel          #+#    #+#             */
+/*   Updated: 2022/03/06 22:10:27 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 #include <iostream>
 
-int main(void)
+int main()
 {
-	std::string	str = "HI THIS IS STRING";
-	std::string	*stringPTR = &str;
-	std::string	&stringREF = str;
-
-	std::cout << "Address of string:\t\t" << &str << std::endl;
-	std::cout << "Address held by stringPTR:\t" << stringPTR << std::endl;
-	std::cout << "Address held by stringREF:\t" << &stringREF << std::endl;
-	std::cout << std::endl;
-	std::cout << "Value of string:\t\t" << str << std::endl;
-	std::cout << "Value pointed to by stringPTR:\t" << *stringPTR << std::endl;
-	std::cout << "Value pointed to by stringREF:\t" << stringREF << std::endl;
-
-	return (0);
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.attack();
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }
