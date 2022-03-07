@@ -6,12 +6,14 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:35:00 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/07 11:38:54 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/07 12:38:42 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #if !defined KAREN_HPP
 # define KAREN_HPP
+
+# include <string>
 
 class Karen
 {
@@ -24,6 +26,6 @@ class Karen
 		~Karen();
 		Karen();
 		void	complain(std::string);
-}
+};
 
 #endif /* KAREN_HPP */
