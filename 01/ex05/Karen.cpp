@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:34:30 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/07 20:13:30 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:10:51 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Karen::error(void)
 void	Karen::complain(std::string level)
 {
 	int			i;
-	std::string	levels[4] = {"debug", "info", "warning", "error"};
+	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void		(Karen::*complaints[4])(void) = {&Karen::debug,
 												&Karen::info,
 												&Karen::warning,
