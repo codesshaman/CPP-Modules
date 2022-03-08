@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:30:39 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/07 11:32:29 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/08 14:50:45 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ static void	replace_lines_in_file(std::ifstream *f, const char **av)
 			replace_file << std::string(av[3]);
 		else
 			replace_file << line;
-		if ((*f).peek() == EOF) // Stop if file doesn't end with a newline
-			break ;
 		replace_file << std::endl;
 	}
 	replace_file.close();
