@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:13:02 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/03 22:31:41 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/08 14:34:14 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,30 @@ void	PhoneBook::show_contacts_list(void)const
 void	PhoneBook::search_contact(void)const
 {
 	int	index;
+	std::string	line;
 
 	if (this->_nbContacts == 0)
 	{
 		std::cout << "PhoneBook: no contacts yet" << std::endl;
 		return ;
 	}
-	if (this->_nbContacts > 1)
+	if (this->_nbContacts > 1)				// No reason to ask if there's only one contact!
 	{
 		this->show_contacts_list();
-		std::cout << "PhoneBook: which index? [1;" << (int)this->_nbContacts << "] ";
-		if (!(std::cin >> index) || index <= 0 || index > this->_nbContacts)
+		index = 0;
+		while (std::cout << "PhoneBook: which index? [1;" << (int)this->_nbContacts << "] "
+			&& std::getline(std::cin, line))
+		{
+			try {
+				index = std::stoi(line);	// Convert string to int
+			}
+			catch (std::invalid_argument) {	// No conversion is possible
+				index = 0;
+			}
+			if (index > 0 && index <= this->_nbContacts)
+				break ;
 			std::cout << "Phonebook: invalid index" << std::endl;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // No limit, ignore up to EOF or newline
+		}
 	}
 	else
 		index = 1;
