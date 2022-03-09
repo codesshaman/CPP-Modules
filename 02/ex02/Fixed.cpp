@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:34:33 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/09 19:25:16 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/09 20:59:15 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Fixed &Fixed::operator=(const Fixed &rhs)
 {
 	//std::cout << "Assignment operator called" << std::endl;
 	this->_number_value = rhs._number_value;
-	return *this;
+	return (*this);
 }
 
 /* Destructor */
