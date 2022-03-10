@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:11:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 13:03:29 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 14:55:05 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ int	main(void)
 	scavtrap2.attack("Blue target");
 	scavtrap2.takeDamage(1000);
 	scavtrap2.attack("Red target");
+	scavtrap2.takeDamage(10);
+	scavtrap2.beRepaired(20);
 	return (0);
 }

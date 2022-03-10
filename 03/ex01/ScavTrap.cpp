@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:17:01 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 13:00:38 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 14:49:08 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ScavTrap::ScavTrap(void)
 {
-	std::cout << "Created an new ScavTrap with default constructor" << std::endl;
+	std::cout << "Created a new ScavTrap with default constructor" << std::endl;
 	this->_name = "";
 	this->_hp = 100;
 	this->_energy = 50;
