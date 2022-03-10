@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:11:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 14:55:05 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 14:57:15 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ int	main(void)
 	ClapTrap	claptrap1("CL4P-TP1");
 	ScavTrap	scavtrap1("SC4V-TP1");
 	ScavTrap	scavtrap2("SC4V-TP2");
+	ScavTrap	scavtrap3;
+
+	scavtrap3 = scavtrap1;
 
 	scavtrap1.attack("Red target");
 	scavtrap1.attack("Red target");
