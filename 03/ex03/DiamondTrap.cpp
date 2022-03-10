@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:22:06 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 15:33:13 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:46:53 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 
 DiamondTrap::DiamondTrap(void)
 {
+	std::cout << "DiamondTrap default constructor called for " << this->_name << std::endl;
+	return ;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &src)
+{
+	this->_name = src._name;
+	this->_hp = src._hp;
+	this->_energy = src._energy;
+	this->_ad = src._ad;
+	std::cout << "DiamondTrap copy constructor called for " << this->_name << std::endl;
 	return ;
 }
 

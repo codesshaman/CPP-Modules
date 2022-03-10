@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:11:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 15:35:34 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:46:32 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 int	main(void)
 {
 	DiamondTrap	dtrap("DI4MOND-TP");
+	DiamondTrap	dtrap2("DI4MOND-TP2");
+	DiamondTrap	dtrap3(dtrap);
 
+	dtrap2 = dtrap;
 	dtrap.guardGate();
 	dtrap.highFivesGuys();
 	dtrap.attack("Green target");
