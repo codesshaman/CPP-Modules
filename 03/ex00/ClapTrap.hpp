@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:11:56 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 11:24:54 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:34:45 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ClapTrap
 		unsigned int	_ad;		// Attack damage
 	public:
 		ClapTrap(void);
+		ClapTrap(const ClapTrap &);
 		ClapTrap(std::string);
 		ClapTrap	& operator=(const ClapTrap &);
 		~ClapTrap(void);
