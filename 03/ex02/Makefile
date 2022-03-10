@@ -6,7 +6,7 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 22:11:27 by ugdaniel          #+#    #+#              #
-#    Updated: 2022/03/10 14:47:53 by ugdaniel         ###   ########.fr        #
+#    Updated: 2022/03/10 17:31:02 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,4 +35,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean res
+.PHONY: all clean fclean re
