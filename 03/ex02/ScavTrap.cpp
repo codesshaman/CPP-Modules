@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:17:01 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 14:55:45 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:39:11 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ ScavTrap::ScavTrap(void)
 	this->_hp = 100;
 	this->_energy = 50;
 	this->_ad = 20;
+	return ;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &src)
+{
+	std::cout << "Created a new ScavTrap with copy constructor" << std::endl;
+	this->_name = src._name;
+	this->_hp = src._hp;
+	this->_energy = src._energy;
+	this->_ad = src._ad;
 	return ;
 }
 

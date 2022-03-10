@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:11:47 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 14:49:51 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:34:22 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 ClapTrap::ClapTrap(void): _name(""), _hp(10), _energy(10), _ad(0)
 {
 	std::cout << "Created a new ClapTrap with default constructor" << std::endl;
+	return ;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &src): _name(src._name), _hp(src._hp), _energy(src._energy), _ad(src._ad)
+{
+	std::cout << "Created a new ClapTrap named \'" << this->_name << "\' with copy constructor" << std::endl;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:50:05 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 15:01:13 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:40:35 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ FragTrap::FragTrap(void)
 	this->_hp = 100;
 	this->_energy = 50;
 	this->_ad = 20;
+	return ;
+}
+
+FragTrap::FragTrap(const FragTrap &src)
+{
+	std::cout << "Created a new FragTrap with copy constructor" << std::endl;
+	this->_name = src._name;
+	this->_hp = src._hp;
+	this->_energy = src._energy;
+	this->_ad = src._ad;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:11:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 15:01:28 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:41:55 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	main(void)
 {
 	ScavTrap	scavtrap1("SC4V-TP1");
 	FragTrap	fragtrap1("FR4G-TP1");
+	FragTrap	fragtrap2(fragtrap1);
+	FragTrap	fragtrap3;
 	
+	fragtrap3 = fragtrap1;
 	scavtrap1.guardGate();
 	scavtrap1.attack("Red target");
 	scavtrap1.takeDamage(30);
