@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:11:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 14:57:54 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:45:13 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(void)
 	ScavTrap	scavtrap1("SC4V-TP1");
 	ScavTrap	scavtrap2("SC4V-TP2");
 	ScavTrap	scavtrap3;
+	ScavTrap	scavtrap4(scavtrap1);
 
 	scavtrap3 = scavtrap1;
 
