@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:14:58 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 14:25:46 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/11 17:07:45 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Brain
 		~Brain(void);
 
 		Brain(const std::string);
-		void	print_ideas(void)const;
+		void	printIdeas(void)const;
 };
 
 #endif /* !defined BRAIN_HPP */

@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:17:10 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 14:28:51 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/11 17:07:45 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ const std::string	Cat::getType(void) const
 	return (this->_type);
 }
 
-void	Cat::print_ideas(void) const
+void	Cat::printIdeas(void) const
 {
-	this->_brain->print_ideas();
+	this->_brain->printIdeas();
 }

@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:50:54 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 14:35:52 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/11 17:07:45 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ int	main(void)
 		Cat		cat("sleep");
 		Cat		copycat;
 
-		cat.print_ideas();
-		copycat.print_ideas();
+		cat.printIdeas();
+		copycat.printIdeas();
 		copycat = cat;
-		copycat.print_ideas();
+		copycat.printIdeas();
 	}
 	return (0);
 }

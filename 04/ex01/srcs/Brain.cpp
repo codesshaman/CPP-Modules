@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:18:13 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 14:26:02 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/11 17:07:45 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Brain::~Brain(void)
 	return ;
 }
 
-void	Brain::print_ideas(void) const
+void	Brain::printIdeas(void) const
 {
 	for (int i = 0; i < 100; i++)
 		std::cout << this->ideas[i] << std::endl;
