@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:50:54 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 13:10:21 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/11 13:12:16 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ int	main(void)
 		cat2->makeSound();													// but compiler still calls the expected
 		std::cout << "\'dog2\' type is: " << dog2->getType() << std::endl;	// Cat and Dog functions
 		dog2->makeSound();
+
+		delete (cat2);
+		delete (dog2);
 	}
 	return (0);
 }
