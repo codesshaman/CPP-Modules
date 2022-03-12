@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 17:25:10 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/12 14:35:31 by ugdaniel         ###   ########.fr       */
+/*   Created: 2022/03/12 11:50:20 by ugdaniel          #+#    #+#             */
+/*   Updated: 2022/03/12 14:35:45 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Ice.hpp"
+#include "ICharacter.hpp"
 #include "AMateria.hpp"
 #include <iostream>
-#include <string>
 
-AMateria::AMateria(void): _type("AMateria")
+Ice::Ice(void)
 {
+	this->_type = "Ice";
 	return ;
 }
 
-AMateria::AMateria(const AMateria &src): _type(src._type)
+Ice::Ice(const Ice &)
 {
+	this->_type = "Ice";
 	return ;
 }
 
-AMateria::AMateria(const std::string &type): _type(type)
-{
-	return ;
-}
-
-AMateria	&AMateria::operator=(const AMateria &)
+Ice	&Ice::operator=(const Ice &)
 {
 	return (*this);
 }
 
-AMateria::~AMateria(void)
+Ice::~Ice(void)
 {
 	return ;
 }
 
-const std::string &AMateria::getType(void) const
+AMateria	*Ice::clone(void) const
 {
-	return (this->_type);
+	Ice		*ice = new Ice(*this);
+
+	return (ice);
 }
 
-void	AMateria::use(ICharacter &target)
+void	Ice::use(ICharacter &target)
 {
-	(void)target;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	return ;
 }

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 13:37:01 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/12 15:13:30 by ugdaniel         ###   ########.fr       */
+/*   Created: 2022/03/12 14:24:43 by ugdaniel          #+#    #+#             */
+/*   Updated: 2022/03/12 14:25:22 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include "Character.hpp"
-#include "ICharacter.hpp"
+#if !defined MATERIA_SOURCE_HPP
+# define MATERIA_SOURCE_HPP
 
-int	main(void)
+class MateriaSource
 {
-		
-	return (0);
-}
 
+};
+
+#endif /* !defined MATERIA_SOURCE_HPP */
