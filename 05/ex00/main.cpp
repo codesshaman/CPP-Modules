@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:35:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/14 17:47:42 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:50:25 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,9 @@ int	main(void)
 
 		delete (jim);
 	}
+//	This should throw an error
+/*	{
+		Bureaucrat bob("bob", 175);
+	}*/
 	return (0);
 }
