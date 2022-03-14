@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:04 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/14 17:12:34 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:44:17 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,12 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade): _name(name), _grade(
 	return ;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src)
+Bureaucrat::Bureaucrat(const Bureaucrat &src): _name(src._name), _grade(src._grade)
 {
 	if (this->_grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	if (this->_grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
-	this->_grade = src._grade;
 //	std::cout << "Copied " << src._name << "'s grade to " << this->_name;
 	return ;
 }
@@ -51,16 +50,6 @@ Bureaucrat::~Bureaucrat(void)
 	return ;
 }
 
-const char	*Bureaucrat::GradeTooHighException::what(void) const throw()
-{
-	return ("bureaucrat grade too high");
-}
-
-const char *Bureaucrat::GradeTooLowException::what(void) const throw()
-{
-	return ("bureaucrat grade too low");
-}
-
 std::string const	&Bureaucrat::getName(void) const
 {
 	return (this->_name);
@@ -73,17 +62,27 @@ int	Bureaucrat::getGrade(void) const
 
 void	Bureaucrat::incrementGrade(void)
 {
-	this->_grade--;
-	if (this->_grade < 1)
+	if (this->_grade <= 1)
 		throw (Bureaucrat::GradeTooHighException());
+	this->_grade--;
 }
 
 void	Bureaucrat::decrementGrade(void)
 {
-	this->_grade++;
-	if (this->_grade > 150)
+	if (this->_grade >= 150)
 		throw (Bureaucrat::GradeTooLowException());
+	this->_grade++;
 	return ;	
+}
+
+const char	*Bureaucrat::GradeTooHighException::what(void) const throw()
+{
+	return ("grade too high");
+}
+
+const char *Bureaucrat::GradeTooLowException::what(void) const throw()
+{
+	return ("grade too low");
 }
 
 std::ostream & operator<<(std::ostream &o, Bureaucrat const &b)
