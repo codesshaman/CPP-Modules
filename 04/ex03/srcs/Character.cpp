@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 14:25:47 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/12 15:13:20 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/14 14:15:41 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Character::Character(const Character &src): _name(src._name), _nb_items(src._nb_
 		this->equip(src._inventory[i]->clone());
 	while (i < 4)
 		this->_inventory[i++] = nullptr;
+	return ;
 }
 
 Character	&Character::operator=(const Character &rhs)
@@ -50,10 +51,7 @@ Character	&Character::operator=(const Character &rhs)
 
 Character::~Character(void)
 {
-	int		i;
-
-	for (i = 0; i < this->_nb_items; i++)
-		delete (this->_inventory[i]);
+	return ;
 }
 
 const std::string	&Character::getName(void) const
@@ -65,7 +63,12 @@ void	Character::equip(AMateria *m)
 {
 	int		i;
 
-	if (this->_nb_items >= 4 || m == nullptr)
+	if (this->_nb_items >= 4)
+	{
+		std::cout << this->getName() << "'s inventory is full." << std::endl;
+		return ;
+	}
+	if (m == nullptr)
 		return ;
 	for (i = 0; i < this->_nb_items; i++)
 	{
@@ -77,12 +80,18 @@ void	Character::equip(AMateria *m)
 	}
 	this->_inventory[this->_nb_items++] = m;
 	std::cout << this->getName() << " equipped a new " << m->getType() << " Materia!" << std::endl;
+	return ;
 }
 
 void	Character::unequip(int idx)
 {
 	int		i;
 
+	if (this->_nb_items <= 0)
+	{
+		std::cout << this->getName() << "'s inventory is empty." << std::endl;
+		return ;
+	}
 	if (idx < 0 || idx >= this->_nb_items || this->_inventory[idx] == nullptr)
 		return ;
 	std::cout << this->getName() << " dropped the " << this->_inventory[idx]->getType() << " Materia." << std::endl;

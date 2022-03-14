@@ -16,13 +16,13 @@
 
 Cure::Cure(void)
 {
-	this->_type = "Cure";
+	this->_type = "cure";
 	return ;
 }
 
 Cure::Cure(const Cure &)
 {
-	this->_type = "Cure";
+	this->_type = "cure";
 	return ;
 }
 

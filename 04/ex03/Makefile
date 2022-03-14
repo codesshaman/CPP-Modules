@@ -6,13 +6,14 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/11 17:20:04 by ugdaniel          #+#    #+#              #
-#    Updated: 2022/03/12 14:16:29 by ugdaniel         ###   ########.fr        #
+#    Updated: 2022/03/14 13:28:45 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= a.out
 
-SRCS		:= srcs/main.cpp srcs/AMateria.cpp srcs/Character.cpp srcs/Ice.cpp srcs/Cure.cpp
+SRCS		:= srcs/main.cpp srcs/AMateria.cpp srcs/Character.cpp srcs/Ice.cpp srcs/Cure.cpp \
+				srcs/MateriaSource.cpp
 
 OBJS		:= $(SRCS:.cpp=.o)
 HEADERS		:= -I include

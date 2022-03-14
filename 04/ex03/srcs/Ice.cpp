@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:50:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/12 14:35:45 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/14 14:00:29 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 Ice::Ice(void)
 {
-	this->_type = "Ice";
+	this->_type = "ice";
 	return ;
 }
 
 Ice::Ice(const Ice &)
 {
-	this->_type = "Ice";
+	this->_type = "ice";
 	return ;
 }
 
