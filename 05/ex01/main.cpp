@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:35:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 15:39:05 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:03:12 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	main(void)
 {
 	{
-		Form	form("form1", 0, 10, 3);
+		Form	form("form1", 10, 3);
 		Bureaucrat	bob("bob", 11);
 		Bureaucrat	jim("jim", 9);
 
@@ -33,7 +33,7 @@ int	main(void)
 	}
 	std::cout << "------------" << std::endl;
 	{
-		Form	*form2 = new Form("form2", 0, 50, 50);
+		Form	*form2 = new Form("form2", 50, 50);
 		Bureaucrat	lily("lily", 2);
 
 		std::cout << *form2 << std::endl;

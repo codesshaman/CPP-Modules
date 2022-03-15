@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:46:57 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 13:48:24 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:02:40 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ Form::Form(void):_name(""), _is_signed(false),
 	return ;
 }
 
-Form::Form(const std::string &name, bool is_signed, int min_sign, int min_exec): 
-	_name(name), _is_signed(is_signed), _min_grade_to_sign(min_sign), _min_grade_to_execute(min_exec)
+Form::Form(const std::string &name, int min_sign, int min_exec): 
+	_name(name), _is_signed(false), _min_grade_to_sign(min_sign), _min_grade_to_execute(min_exec)
 {
 	if (this->_min_grade_to_sign < 1 || this->_min_grade_to_execute < 1)
 		throw (Form::GradeTooHighException());
