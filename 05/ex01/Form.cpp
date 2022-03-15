@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:46:57 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 18:02:40 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:13:13 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,15 @@ void	Form::decrementGradeToExecute(void)
 	return ;	
 }
 
-void	Form::beSigned(const Bureaucrat &b)
+bool	Form::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() > this->_min_grade_to_sign)
+	{
 		throw (Form::GradeTooLowException());
+		return (false);
+	}
 	this->_is_signed = true;
+	return (true);
 }
 
 const char	*Form::GradeTooHighException::what(void) const throw()

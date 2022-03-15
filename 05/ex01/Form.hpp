@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:51:19 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 18:02:21 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:13:22 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Form
 		void				incrementGradeToExecute(void);
 		void				decrementGradeToExecute(void);
 
-		void				beSigned(const Bureaucrat &);
+		bool				beSigned(const Bureaucrat &);
 
 		class GradeTooHighException: public std::exception {
 			public:
