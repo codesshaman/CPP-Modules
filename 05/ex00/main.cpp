@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:35:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/14 17:50:25 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/15 11:52:12 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void)
 			std::cout << "Incrementing " << bob.getName() << "'s grade (currently " << bob.getGrade() << ")" << std::endl;
 			bob.incrementGrade();
 		}
-		catch (Bureaucrat::GradeTooHighException &e) {
+		catch (std::exception &e) {
 			std::cerr << "Could not increment grade: " << e.what() << std::endl;
 		}
 	}
@@ -44,7 +44,7 @@ int	main(void)
 			std::cout << "Decrementing " << jim->getName() << "'s grade (currently " << jim->getGrade() << ")" << std::endl;
 			jim->decrementGrade();
 		}
-		catch (Bureaucrat::GradeTooLowException &e) {
+		catch (std::exception &e) {
 			std::cerr << "Could not decrement grade: " << e.what() << std::endl;
 		}
 
