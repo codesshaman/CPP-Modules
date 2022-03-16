@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:51:19 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 18:49:09 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:14:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class Form
 		virtual void		execute(const Bureaucrat &) const = 0;
 		bool				isExecutable(const Bureaucrat &) const;
 
-		class CannotExecute: public std::exception {
+		class CannotExecuteException: public std::exception {
 			public:
 				virtual const char *what() const throw();
 		};

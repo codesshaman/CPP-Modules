@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:34:42 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 15:26:21 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:14:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ const std::string	&RobotomyRequestForm::getTarget(void) const
 void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	if (!this->isExecutable(executor))
-		throw (Form::CannotExecute());
+		throw (Form::CannotExecuteException());
 	std::cout << "* frightful drill noises *" << std::endl;
 	if (std::rand() % 2)
 		std::cout << "Operation is a success. " << this->_target << " has been robotomized." << std::endl;

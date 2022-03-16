@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:52:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 13:59:03 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:14:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	std::string		file_path;
 
 	if (!this->isExecutable(executor))
-		throw (Form::CannotExecute());
+		throw (Form::CannotExecuteException());
 	file_path = this->_target + "_shrubbery";
 	file.open(file_path, std::fstream::out);
 	file << "       _-_" << std::endl;

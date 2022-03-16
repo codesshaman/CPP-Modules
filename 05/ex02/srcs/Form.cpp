@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:46:57 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 12:12:21 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:14:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ bool	Form::isExecutable(const Bureaucrat &executor) const
 	return (this->_is_signed && executor.getGrade() <= this->_min_grade_to_execute);
 }
 
-const char *Form::CannotExecute::what(void) const throw()
+const char *Form::CannotExecuteException::what(void) const throw()
 {
 	return ("file has to be signed; executor has to be graded high enough");
 }

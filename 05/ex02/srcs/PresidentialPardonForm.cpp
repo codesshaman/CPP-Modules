@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:11:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 15:17:06 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:14:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ const std::string	&PresidentialPardonForm::getTarget(void) const
 void	PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	if (!this->isExecutable(executor))
-		throw (Form::CannotExecute());
+		throw (Form::CannotExecuteException());
 	std::cout << "Zaphod Beeblebrox forgave " << this->_target << "." << std::endl;
 	return ;
 }
