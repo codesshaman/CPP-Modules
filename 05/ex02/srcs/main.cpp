@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:35:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 14:34:20 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/16 15:21:15 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 int	main(void)
 {
 	srand(time(NULL));
-/*	{
+	{
 		ShrubberyCreationForm	form("trees");
-		Bureaucrat				bob("bob", 138);
+		Bureaucrat				bob("Bob", 138);
 
 		std::cout << "> " << form << std::endl;
 		std::cout << "> " << bob << std::endl;
@@ -31,13 +31,22 @@ int	main(void)
 		std::cout << "> Incrementing " << bob.getName() << "'s grade" << std::endl;
 		bob.incrementGrade();
 		bob.executeForm(form);
-	}*/
+	}
+	std::cout << "----------------------------------" << std::endl;
 	{
 		RobotomyRequestForm	form("target2");
-		Bureaucrat			jim("jim", 30);
+		Bureaucrat			jim("Jim", 30);
 
 		jim.signForm(form);
 		jim.executeForm(form);
+	}
+	std::cout << "----------------------------------" << std::endl;
+	{
+		PresidentialPardonForm	form("target3");
+		Bureaucrat				tom("Tom", 2);
+
+		tom.signForm(form);
+		tom.executeForm(form);
 	}
 	return (0);
 }
