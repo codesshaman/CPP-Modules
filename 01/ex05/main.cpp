@@ -6,21 +6,21 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:49:49 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/08 12:10:36 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/22 13:25:43 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int	main(void)
 {
-	Karen	karen;
+	Harl	harl;
 
-	karen.complain("DEBUG");
-	karen.complain("INFO");
-	karen.complain("WARNING");
-	karen.complain("ERROR");
-	karen.complain("TEST");
-	karen.complain("debug");
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	harl.complain("TEST");
+	harl.complain("debug");
 	return (0);
 }

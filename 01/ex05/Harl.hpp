@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,7 +15,7 @@
 
 # include <string>
 
-class Karen
+class Harl
 {
 	private:
 		void	debug(void);
@@ -23,8 +23,8 @@ class Karen
 		void	warning(void);
 		void	error(void);
 	public:
-		~Karen();
-		Karen();
+		~Harl();
+		Harl();
 		void	complain(std::string);
 };
 

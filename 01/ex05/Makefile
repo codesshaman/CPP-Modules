@@ -6,13 +6,13 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 11:34:05 by ugdaniel          #+#    #+#              #
-#    Updated: 2022/03/07 11:34:16 by ugdaniel         ###   ########.fr        #
+#    Updated: 2022/03/22 13:25:38 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= a.out
 
-SRCS		:= main.cpp Karen.cpp
+SRCS		:= main.cpp Harl.cpp
 OBJS		:= $(SRCS:.cpp=.o)
 HEADERS		:= -I .
 
