@@ -6,13 +6,13 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 21:03:38 by ugdaniel          #+#    #+#              #
-#    Updated: 2022/03/08 12:06:10 by ugdaniel         ###   ########.fr        #
+#    Updated: 2022/03/22 13:25:43 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= karenFilter
+NAME		:= harlFilter
 
-SRCS		:= main.cpp Karen.cpp
+SRCS		:= main.cpp Harl.cpp
 OBJS		:= $(SRCS:.cpp=.o)
 HEADERS		:= -I .
 

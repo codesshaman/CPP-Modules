@@ -6,16 +6,16 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:49:49 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/08 12:44:40 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/22 13:25:43 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 #include <iostream>
 
 int	main(int ac, const char **av)
 {
-	Karen		karen;
+	Harl		harl;
 	std::string	filter;
 
 	if (ac != 2)
@@ -30,10 +30,10 @@ int	main(int ac, const char **av)
 		return (0);
 	}
 	std::cout << "[" << filter << "]" << std::endl;
-	karen.complain("DEBUG", filter);
-	karen.complain("INFO", filter);
-	karen.complain("WARNING", filter);
-	karen.complain("ERROR", filter);
-	karen.complain("TEST", filter);
+	harl.complain("DEBUG", filter);
+	harl.complain("INFO", filter);
+	harl.complain("WARNING", filter);
+	harl.complain("ERROR", filter);
+	harl.complain("TEST", filter);
 	return (0);
 }
