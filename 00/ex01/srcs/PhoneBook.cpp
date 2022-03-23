@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:13:02 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/08 14:34:14 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:46:07 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,20 @@ void	PhoneBook::search_contact(void)const
 		std::cout << "PhoneBook: no contacts yet" << std::endl;
 		return ;
 	}
-	if (this->_nbContacts > 1)				// No reason to ask if there's only one contact!
+	if (this->_nbContacts > 1)				// no reason to ask if there's only one contact!
 	{
 		this->show_contacts_list();
 		index = 0;
-		while (std::cout << "PhoneBook: which index? [1;" << (int)this->_nbContacts << "] "
+		while (std::cout << "PhoneBook: which index? [1;" << this->_nbContacts << "] "
 			&& std::getline(std::cin, line))
 		{
 			try {
-				index = std::stoi(line);	// Convert string to int
+				index = std::stoi(line);	// convert string to int
 			}
-			catch (std::invalid_argument) {	// No conversion is possible
+			catch (std::invalid_argument) {	// no conversion is possible
+				index = 0;
+			}
+			catch (std::exception &) {		// invalid number
 				index = 0;
 			}
 			if (index > 0 && index <= this->_nbContacts)

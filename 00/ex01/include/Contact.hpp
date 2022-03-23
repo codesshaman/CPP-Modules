@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:22:28 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/02/24 16:02:37 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:38:28 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ class Contact
 			phoneNumber,
 			darkestSecret,
 			lastField = darkestSecret
-		};
-		const static std::string	fields_name[];
-		std::string					infos[lastField + 1];
+		}; // Contact::Fields
+
+		const static std::string	_fields_name[];
+		std::string					_infos[lastField + 1];
 		int							index;
-		void						erase_contact(void);
+		void						eraseContact(void);
+
 	public:
 		Contact();
 		~Contact();
@@ -37,6 +39,6 @@ class Contact
 		void	contact_header(void)const;
 		void	display_contact(void)const;
 		int		set_info(int index);
-};
+}; // class Contact
 
 #endif // CONTACT_HPP

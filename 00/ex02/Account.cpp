@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 22:06:25 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/04 20:44:03 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:51:16 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	Account::_displayTimestamp(void)
 	tm_time = localtime(&current_time);
 	std::cout << std::setfill('0') << "["
 			<< (tm_time->tm_year + 1900)				// Year
-			<< std::setw(2) << tm_time->tm_mon			// Month
+			<< std::setw(2) << tm_time->tm_mon + 1		// Month
 			<< std::setw(2) << tm_time->tm_mday << "_"	// Day
 			<< std::setw(2) << tm_time->tm_hour			// Hour
 			<< std::setw(2) << tm_time->tm_min			// Minutes
@@ -122,12 +122,27 @@ Account::~Account(void)
 	Account::_nbAccounts--;
 }
 
-int	Account::checkAmount(void) const {return (this->_amount);}
+int	Account::checkAmount(void) const
+{
+	return (this->_amount);
+}
 
-int	Account::getNbAccounts( void ) {return (Account::_nbAccounts);}
+int	Account::getNbAccounts( void )
+{
+	return (Account::_nbAccounts);
+}
 
-int	Account::getTotalAmount(void) {return (Account::_totalAmount);}
+int	Account::getTotalAmount(void)
+{
+	return (Account::_totalAmount);
+}
 
-int	Account::getNbDeposits(void) {return (Account::_totalNbDeposits);}
+int	Account::getNbDeposits(void)
+{
+	return (Account::_totalNbDeposits);
+}
 
-int	Account::getNbWithdrawals(void) {return (Account::_totalNbWithdrawals);}
+int	Account::getNbWithdrawals(void)
+{
+	return (Account::_totalNbWithdrawals);
+}

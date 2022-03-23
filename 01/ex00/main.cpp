@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:52:17 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/06 13:05:34 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:56:04 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int main(void)
 	example(zombor);
 	std::cout << std::endl;
 
+	std::cout << "[DEBUG] Creating a copy of zombor" << std::endl;
 	example2(*zombor);
 	std::cout << std::endl;
 
@@ -46,9 +47,10 @@ int main(void)
 	delete zombor;
 	std::cout << std::endl;
 
-	// Creating a zombie on the stack, automatically deleted when done
+	// Creating a zombie on the stack
 	std::cout << "[DEBUG] -- Example 2: on the stack --" << std::endl;
 	randomChump("Zombax");
-
+	
+	// Zombax is automatically deleted
 	return (0);
 }

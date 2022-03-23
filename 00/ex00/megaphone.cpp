@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:44:19 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/04 21:29:13 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:46:48 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, const char **argv)
 		{
 			std::string str(argv[i]);
 			for (size_t j = 0; j < str.length(); j++)
-				std::cout << (char)std::toupper(str[j]);
+				std::cout << static_cast<char>(std::toupper(str[j]));
 		}
 	}
 	else
