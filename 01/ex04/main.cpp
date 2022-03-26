@@ -6,36 +6,59 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:30:39 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/08 14:50:45 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/26 18:25:47 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-static void	replace_lines_in_file(std::ifstream *f, const char **av)
+static void	read_file(std::ifstream *f, std::string &line)
 {
-	std::string		line;
-	std::ofstream	replace_file;
-	std::string		replace_path;
+	std::string		temp;
 
-	replace_path = std::string(av[1]) + std::string(".replace"); // Add '.replace' to our file name
+	line.empty();
+	while ((*f).is_open() && std::getline(*f, temp))
+	{
+		line.append(temp);
+		if (f->peek() != EOF)
+			line += '\n';
+	}
+	line.append("\n");
+}
+
+static void output_to_new_file(const char *file_name, std::string &line)
+{
+	std::ofstream	replace_file;
+	std::string		replace_path = std::string(file_name) + std::string(".replace");
+
 	replace_file.open(replace_path, std::ios::out);
 	if (!replace_file.is_open())
 	{
 		std::cerr << "error: could not create replacement file" << std::endl;
-		return ;
+		return;
 	}
-	while (std::getline(*f, line) && (*f).is_open())
-	{
-		if (line.compare(std::string(av[2])) == 0)
-			replace_file << std::string(av[3]);
-		else
-			replace_file << line;
-		replace_file << std::endl;
-	}
+	replace_file << line;
 	replace_file.close();
-	std::cout << av[1] << " > " << replace_path << std::endl;
+	std::cout << file_name << " > " << replace_path << std::endl;
+}
+
+static void	replace_lines_in_file(std::ifstream *f, const char **av)
+{
+	std::string		line;
+	std::string		s1(av[2]);
+	std::string		s2(av[3]);
+
+	read_file(f, line);
+	for (size_t pos = 0; pos < line.length(); pos++)
+	{
+		if (line.compare(pos, s1.length(), s1) == 0)
+		{
+			line.erase(pos, s1.length());
+			line.insert(pos, s2);
+		}
+	}
+	output_to_new_file(av[1], line);
 }
 
 int	main(int argc, const char **argv)
