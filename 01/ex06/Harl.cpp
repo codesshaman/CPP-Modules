@@ -24,7 +24,7 @@ void	Harl::info(void)
 {
 	std::cout << "I cannot believe adding extra bacon costs more money."
 		" You didn't put enough bacon in my burger ! If you did, I wouldn't be"
-		"asking for more !" << std::endl;
+		" asking for more !" << std::endl;
 }
 
 void	Harl::warning(void)
@@ -65,9 +65,7 @@ void	Harl::complain(std::string level, std::string filter)
 	level_index = get_index(levels, level);
 	filter_index = get_index(levels, filter);
 	if (level_index - filter_index >= 0)
-	{
 		(this->*complaints[level_index])();
-	}
 }
 
 Harl::Harl(void)
