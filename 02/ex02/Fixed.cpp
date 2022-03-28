@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:34:33 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/09 20:59:15 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/28 18:13:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,8 +187,7 @@ Fixed &Fixed::operator--(void)
 	return (*this);
 }
 
-/* post-increment
- * int is unused, though the compiler needs it to tell the functions apart */
+/* post-increment */
 Fixed Fixed::operator++(int)
 {
 	Fixed	old(*this);

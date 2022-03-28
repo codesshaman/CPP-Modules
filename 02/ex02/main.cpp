@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:06:01 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/09 19:45:18 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/28 18:44:39 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	tests(int value_of_b, float value_of_c)
 
 	Fixed d(c);
 	std::cout << "Fixed d created with Fixed value (c)" << std::endl;
-	std::cout << "Value of c is: " << d << std::endl;
+	std::cout << "Value of d is: " << d << std::endl;
 
 	std::cout << "Assignment operator called on a with b" << std::endl;
 	a = b;
@@ -67,7 +67,7 @@ static void	tests(int value_of_b, float value_of_c)
 	std::cout << "min(a, d) = " << Fixed::min(a, d) << std::endl;
 	std::cout << "min(b, c) = " << Fixed::min(b, c) << std::endl;
 	std::cout << "max(a, d) = " << Fixed::max(a, d) << std::endl;
-	std::cout << "max(b, c) = " << Fixed::max(b, c) << std::endl << std::endl;
+	std::cout << "max(b, c) = " << Fixed::max(b, c) << std::endl;
 }
 
 int	main(void)
