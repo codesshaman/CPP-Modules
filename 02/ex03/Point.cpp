@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 20:51:25 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/09 21:31:17 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/28 18:33:27 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ Point::~Point(void)
 
 std::ostream	&operator<<(std::ostream &o, const Point &rhs)
 {
-	o << "(" << rhs.getX() << "," << rhs.getY() << ")";
+	o << "(" << rhs.getX() << ", " << rhs.getY() << ")";
 	return (o);
 }
