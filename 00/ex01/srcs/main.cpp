@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:09:05 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/23 11:10:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/28 15:27:28 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int	main(void)
 		else if (line == "EXIT")
 			return (0);
 	}
-	std::cout << "\033[2K\rPhoneBook> EXIT" << std::endl;
+	std::cout << "\033[2K\rPhoneBook: EXIT" << std::endl;
 	return (0);
 }

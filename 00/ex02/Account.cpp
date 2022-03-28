@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 22:06:25 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/23 11:51:16 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/28 18:03:47 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	std::cout << "amount:" << this->checkAmount() << ";";
 	this->_nbWithdrawals++;
 	Account::_totalNbWithdrawals++;
-	std::cout << "nb_withdrawals:" << this->_totalNbWithdrawals << std::endl;
+	std::cout << "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	return (true);
 }
 

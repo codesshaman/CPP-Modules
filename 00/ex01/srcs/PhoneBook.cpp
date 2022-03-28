@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:13:02 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/23 11:46:07 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/28 18:03:16 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ void	PhoneBook::show_contacts_list(void)const
 		std::cout << "----------|----------|----------|----------" << std::endl;
 		this->contacts[i].contact_header();
 	}
+}
+
+static bool	digits_only(std::string &s)
+{
+	for (size_t i = 0; i < s.length(); i++)
+		if (s[i] < '0' || s[i] > '9')
+			return (false);
+	return (true);
 }
 
 void	PhoneBook::search_contact(void)const
@@ -53,7 +61,7 @@ void	PhoneBook::search_contact(void)const
 			catch (std::exception &) {		// invalid number
 				index = 0;
 			}
-			if (index > 0 && index <= this->_nbContacts)
+			if (digits_only(line) && index > 0 && index <= this->_nbContacts)
 				break ;
 			std::cout << "Phonebook: invalid index" << std::endl;
 		}

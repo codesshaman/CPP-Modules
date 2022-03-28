@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:23:09 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/23 11:46:21 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/28 15:26:01 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int	Contact::set_info(int index)
 		if (std::cin.eof() || temp._infos[i].length() < 1)
 		{
 			//this->eraseContact();
-			std::cout << std::endl << "PhoneBook: contact not added: fields cannot be empty." << std::endl;
+			std::cout << std::endl << "PhoneBook: contact not added: fields cannot be empty" << std::endl;
 			return (0);
 		}
 	}
-	std::cout << std::endl << "PhoneBook: contact added!" << std::endl;
+	std::cout << std::endl << "PhoneBook: contact " << index + 1 << " added successfully" << std::endl;
 	for (i = firstName; i <= lastField; i++)
 		this->_infos[i] = temp._infos[i];
 	this->index = temp.index;
