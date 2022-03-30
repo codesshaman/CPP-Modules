@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:02:26 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/09 16:48:18 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:59:20 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Fixed
 		static const int	_fractional_bits;
 
 	public:
-		Fixed();							// Default constructor
-		Fixed(const Fixed &);				// Copy constructor
-		Fixed & operator=(const Fixed &);	// Assignment operator overload
-		~Fixed();							// Destructor
+		Fixed();
+		Fixed(const Fixed &);
+		Fixed & operator=(const Fixed &);
+		~Fixed();
 
 		Fixed(const int);
 		Fixed(const float);
