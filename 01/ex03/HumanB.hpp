@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:58:42 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/26 17:23:51 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:09:22 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined HUMAN_B_HPP
+#ifndef HUMAN_B_HPP
 # define HUMAN_B_HPP
 
 # include "Weapon.hpp"
@@ -30,4 +30,4 @@ class HumanB
 		void	dropWeapon(void);
 };
 
-#endif /* !defined HUMAN_B_HPP */
+#endif /* HUMAN_B_HPP */

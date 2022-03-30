@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:08:02 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/06 21:12:20 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:09:34 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined WEAPON_HPP
+#ifndef WEAPON_HPP
 # define WEAPON_HPP
 
 # include <string>
@@ -27,4 +27,4 @@ class Weapon
 		void				setType(std::string type);
 };
 
-#endif /* !defined WEAPON_HPP */
+#endif /* WEAPON_HPP */
