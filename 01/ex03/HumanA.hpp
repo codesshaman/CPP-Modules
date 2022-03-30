@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 19:58:42 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/30 15:09:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:30:06 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@
 class HumanA
 {
 	private:
+		HumanA(void);
+
 		std::string	_name;
 		Weapon		&_weapon;
-		HumanA();
+
 	public:
 		HumanA(std::string, Weapon &weapon);
-		~HumanA();
+		~HumanA(void);
+
 		void	attack(void)const;
 };
 
