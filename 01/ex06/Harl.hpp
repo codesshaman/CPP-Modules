@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined KAREN_HPP
-# define KAREN_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
 # include <string>
 
@@ -25,7 +25,8 @@ class Harl
 	public:
 		~Harl();
 		Harl();
+
 		void	complain(std::string, std::string);
 };
 
-#endif /* KAREN_HPP */
+#endif /* HARL_HPP */
