@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:12:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/22 18:54:03 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:37:52 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined MUTANT_STACK_HPP
+#ifndef MUTANT_STACK_HPP
 # define MUTANT_STACK_HPP
 
 # include <stack>
@@ -47,4 +47,4 @@ class MutantStack : public std::stack<T>
 		}
 };
 
-#endif /* !defined MUTANT_STACK_HPP */
+#endif /* MUTANT_STACK_HPP */

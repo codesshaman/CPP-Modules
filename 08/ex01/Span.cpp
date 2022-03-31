@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:37:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/22 16:26:37 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:49:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,11 +102,21 @@ int	Span::longestSpan(void) const
 
 void	Span::fillRandomNumbers(void)
 {
-	int		i;
-	int		left = this->_max_size - this->getSize();
+	int		nb_left;
 
-	for (i = 0; i < left; i++)
+	nb_left = this->_max_size - this->getSize();
+	for (int i = 0; i < nb_left; i++)
 		this->addNumber(rand() % 42 + 1);
+}
+
+unsigned int	Span::getMaxSize(void) const
+{
+	return (this->_max_size);
+}
+
+int	Span::getSize(void) const
+{
+	return (this->_numbers.size());
 }
 
 std::ostream	& operator<<(std::ostream &o, const Span &s)
