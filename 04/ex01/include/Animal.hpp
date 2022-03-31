@@ -6,20 +6,20 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:18:50 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 13:09:13 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:26:39 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined ANIMAL_HPP
+#ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
-# include "Animal.hpp"
 # include <string>
 
 class Animal
 {
 	protected:
 		std::string	_type;
+
 	public:
 		Animal(void);
 		Animal(const Animal &);
@@ -30,4 +30,4 @@ class Animal
 		virtual const std::string	getType(void)const;
 };
 
-#endif /* !defined ANIMAL_HPP */
+#endif /* ANIMAL_HPP */

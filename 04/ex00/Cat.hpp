@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:18:02 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 17:51:16 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:21:20 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 class Cat : public Animal
 {
-	private:
 	public:
 		Cat(void);
 		Cat(const Cat &);
@@ -28,4 +27,4 @@ class Cat : public Animal
 		const std::string	getType(void)const;
 };
 
-#endif /* !defined CAT_HPP */
+#endif /* CAT_HPP */

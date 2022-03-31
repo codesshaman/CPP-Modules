@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:18:59 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 17:07:45 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:26:04 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Dog : public Animal
 {
 	private:
 		Brain	*_brain;
+
 	public:
 		Dog(void);
 		Dog(const Dog &);
@@ -33,4 +34,4 @@ class Dog : public Animal
 		void	printIdeas(void)const;
 };
 
-#endif /* !defined DOG_HPP */
+#endif /* DOG_HPP */

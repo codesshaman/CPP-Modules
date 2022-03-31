@@ -6,20 +6,20 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:57:18 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 17:57:22 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:27:03 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined WRONG_WrongAnimal_HPP
-# define WRONG_WrongAnimal_HPP
+#ifndef WRONG_ANIMAL_HPP
+# define WRONG_ANIMAL_HPP
 
-# include "WrongAnimal.hpp"
 # include <string>
 
 class WrongAnimal
 {
 	protected:
 		std::string	_type;
+
 	public:
 		WrongAnimal(void);
 		WrongAnimal(const WrongAnimal &);
@@ -30,4 +30,4 @@ class WrongAnimal
 		virtual const std::string	getType(void)const;
 };
 
-#endif /* !defined WRONG_WrongAnimal_HPP */
+#endif /* WRONG_ANIMAL_HPP */

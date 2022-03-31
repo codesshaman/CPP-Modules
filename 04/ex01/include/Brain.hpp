@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:14:58 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 17:07:45 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:26:50 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined BRAIN_HPP
+#ifndef BRAIN_HPP
 # define BRAIN_HPP
 
 # include <string>
@@ -19,6 +19,7 @@ class Brain
 {
 	private:
 		std::string	ideas[100];
+
 	public:
 		Brain(void);
 		Brain(const Brain &);
@@ -29,4 +30,4 @@ class Brain
 		void	printIdeas(void)const;
 };
 
-#endif /* !defined BRAIN_HPP */
+#endif /* BRAIN_HPP */

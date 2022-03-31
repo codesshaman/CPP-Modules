@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:50:54 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 17:07:45 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:26:25 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	main(void)
 			std::cout << "--------------" << std::endl;
 		}
 	}
-	//return (0);
 	{
 		Cat		cat("sleep");
 		Cat		copycat;

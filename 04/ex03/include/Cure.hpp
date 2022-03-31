@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:46:16 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/12 13:46:59 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:14:20 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined CURE_HPP
+#ifndef CURE_HPP
 # define CURE_HPP
 
 # include "AMateria.hpp"
@@ -30,4 +30,4 @@ class Cure : public AMateria
 		void use(ICharacter& target);
 };
 
-#endif /* !defined CURE_HPP */
+#endif /* CURE_HPP */

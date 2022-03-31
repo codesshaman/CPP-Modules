@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:20:50 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/14 13:20:00 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:25:41 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined CHARACTER_HPP
+#ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
 # include "AMateria.hpp"
@@ -24,6 +24,7 @@ class Character : public ICharacter
 		std::string	_name;
 		AMateria	*_inventory[4];
 		int			_nb_items;
+
 	public:
 		Character(std::string const &);
 		Character(const Character &);
@@ -37,4 +38,4 @@ class Character : public ICharacter
 		void use(int idx, ICharacter &target);
 };
 
-#endif /* !defined CHARACTER_HPP */
+#endif /* CHARACTER_HPP */

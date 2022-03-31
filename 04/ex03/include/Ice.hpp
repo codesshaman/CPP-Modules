@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:46:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/12 14:04:26 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:14:20 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined ICE_HPP
+#ifndef ICE_HPP
 # define ICE_HPP
 
 # include "AMateria.hpp"
@@ -28,4 +28,4 @@ class Ice : public AMateria
 		void use(ICharacter& target);
 };
 
-#endif /* !defined ICE_HPP */
+#endif /* ICE_HPP */

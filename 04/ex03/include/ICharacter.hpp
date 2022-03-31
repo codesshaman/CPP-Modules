@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:18:48 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/12 13:39:34 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:14:20 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined I_CHARACTER_HPP
+#ifndef I_CHARACTER_HPP
 # define I_CHARACTER_HPP
 
 # include "AMateria.hpp"
@@ -28,4 +28,4 @@ class ICharacter
 		virtual void use(int idx, ICharacter& target) = 0;
 };
 
-#endif /* !defined I_CHARACTER_HPP */
+#endif /* I_CHARACTER_HPP */
