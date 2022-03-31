@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:14:22 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 16:36:48 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:08:09 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined SCAVTRAP_HPP
+#ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
@@ -23,7 +23,8 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap(std::string);
 		ScavTrap	& operator=(const ScavTrap &);
 		~ScavTrap(void);
+
 		void	guardGate(void)const;
 };
 
-#endif /* !defined SCAVTRAP_HPP */
+#endif /* SCAVTRAP_HPP */

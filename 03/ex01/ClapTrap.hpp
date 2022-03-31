@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:11:56 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 16:34:52 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:07:23 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined CLAPTRAP_HPP
+#ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
 # include <string>
@@ -18,10 +18,11 @@
 class ClapTrap
 {
 	protected:
-		std::string		_name;		// Name
-		unsigned int	_hp;		// Hit points
-		unsigned int	_energy;	// Energy points
-		unsigned int	_ad;		// Attack damage
+		std::string		_name;
+		unsigned int	_hp;
+		unsigned int	_energy;
+		unsigned int	_ad;
+
 	public:
 		ClapTrap(void);
 		ClapTrap(const ClapTrap &);
@@ -34,4 +35,4 @@ class ClapTrap
 		void	beRepaired(unsigned int amount);
 };
 
-#endif /* !defined CLAPTRAP_HPP */
+#endif /* CLAPTRAP_HPP */

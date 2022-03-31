@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:05:05 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/10 16:43:17 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:06:16 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined DIAMONDTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
 # include "ScavTrap.hpp"
@@ -31,4 +31,4 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		void			whoAmI(void)const;
 };
 
-#endif /* !defined DIAMONDTRAP_HPP */
+#endif /* DIAMONDTRAP_HPP */
