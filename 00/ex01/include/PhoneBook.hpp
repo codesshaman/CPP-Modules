@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 12:13:23 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/28 14:56:52 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/30 11:59:30 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ class	PhoneBook
 	private:
 		Contact	contacts[8];
 		int		_nbContacts;
+
 		void	show_contacts_list(void)const;
+
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
+
 		void	add_contact(void);
 		void	search_contact(void)const;
 };

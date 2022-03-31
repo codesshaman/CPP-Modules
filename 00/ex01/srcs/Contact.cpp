@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 16:23:09 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/28 15:26:01 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/30 12:40:19 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@ const std::string Contact::_fields_name[5] = {
 	"Darkest secret"
 };
 
-void	Contact::eraseContact(void)
-{
-	int		i;
-
-	for (i = firstName; i <= lastField; i++)
-		this->_infos[i] = "N/A";
-}
-
 int	Contact::set_info(int index)
 {
 	int			i;
@@ -43,7 +35,6 @@ int	Contact::set_info(int index)
 		std::getline(std::cin, temp._infos[i]);
 		if (std::cin.eof() || temp._infos[i].length() < 1)
 		{
-			//this->eraseContact();
 			std::cout << std::endl << "PhoneBook: contact not added: fields cannot be empty" << std::endl;
 			return (0);
 		}
