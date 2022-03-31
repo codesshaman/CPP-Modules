@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 11:50:08 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/21 19:23:48 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:18:32 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined ARRAY_HPP
+#ifndef ARRAY_HPP
 # define ARRAY_HPP
 
 # include <iostream>
@@ -22,16 +22,17 @@ class Array
 	private:
 		T				*_array;
 		unsigned int	_array_size;
-	public:
-		Array<T>(void): _array(nullptr), _array_size(0) {
-			return ;
-		};
 
-		Array<T>(unsigned int array_size): _array_size(array_size) {
+	public:
+		Array<T>(void): _array(nullptr), _array_size(0) {}
+
+		Array<T>(unsigned int array_size): _array_size(array_size)
+		{
 			this->_array = new T[array_size];
 		}
 
-		Array<T>(const Array<T> &src): _array_size(src._array_size)	{
+		Array<T>(const Array<T> &src): _array_size(src._array_size)
+		{
 			*this = src;
 		}
 
@@ -57,13 +58,12 @@ class Array
 			return (this->_array[index]);
 		}
 
-		~Array<T>(void) {
-			return ;
-		}
+		~Array<T>(void) {}
 
-		unsigned int	size(void) const {
+		unsigned int	size(void) const
+		{
 			return (this->_array_size);
 		}
 };
 
-#endif /* !defined ARRAY_HPP */
+#endif /* ARRAY_HPP */

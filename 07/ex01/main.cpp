@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:05:32 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/21 17:01:50 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:17:29 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int	main(void)
 
 	iter(strarr, 4, print<std::string>);
 	std::cout << std::endl;
+
 	return (0);
 }

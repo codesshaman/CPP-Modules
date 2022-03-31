@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 11:45:17 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/21 19:29:04 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:36:13 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(void)
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "> Assignement operator" << std::endl;
+	std::cout << "> Assignement operator: empty_array = int_array;" << std::endl;
 	empty_array = int_array;
 	try {
 		for (i = 0; i < empty_array.size() + 1; i++)

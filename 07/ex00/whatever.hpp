@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:25:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/20 22:03:43 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:06:21 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined WHATEVER_HPP
+#ifndef WHATEVER_HPP
 # define WHATEVER_HPP
 
 template <typename T>
@@ -39,4 +39,4 @@ const T	&max(T &a, T &b)
 	return (b);
 }
 
-#endif /* !defined WHATEVER_HPP */
+#endif /* WHATEVER_HPP */
