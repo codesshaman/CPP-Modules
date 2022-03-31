@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:29 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 12:00:48 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:34:21 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined BUREAUCRAT_HPP
+#ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
 #include <string>
@@ -20,8 +20,10 @@ class Bureaucrat
 {
 	private:
 		Bureaucrat(void);
+
 		const std::string	_name;
 		int					_grade;
+
 	public:
 		Bureaucrat(const std::string &, int);
 		Bureaucrat(const Bureaucrat &);
@@ -34,6 +36,8 @@ class Bureaucrat
 		void				incrementGrade(void);
 		void				decrementGrade(void);
 
+	/* Exceptions */
+	public:
 		class GradeTooHighException: public std::exception {
 			public:
 				virtual const char *what() const throw();
@@ -47,4 +51,4 @@ class Bureaucrat
 
 std::ostream	& operator<<(std::ostream &, const Bureaucrat &);
 
-#endif /* !defined BUREAUCRAT_HPP */
+#endif /* BUREAUCRAT_HPP */

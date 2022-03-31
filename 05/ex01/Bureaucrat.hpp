@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:29 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 13:03:49 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:34:18 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined BUREAUCRAT_HPP
+#ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
 #include "Form.hpp"
@@ -23,8 +23,10 @@ class Bureaucrat
 {
 	private:
 		Bureaucrat(void);
+
 		const std::string	_name;
 		int					_grade;
+
 	public:
 		Bureaucrat(const std::string &, int);
 		Bureaucrat(const Bureaucrat &);
@@ -39,6 +41,7 @@ class Bureaucrat
 
 		void				signForm(Form &) const;
 
+	public:
 		class GradeTooHighException: public std::exception {
 			public:
 				virtual const char *what() const throw();
@@ -52,4 +55,4 @@ class Bureaucrat
 
 std::ostream	& operator<<(std::ostream &, const Bureaucrat &);
 
-#endif /* !defined BUREAUCRAT_HPP */
+#endif /* BUREAUCRAT_HPP */

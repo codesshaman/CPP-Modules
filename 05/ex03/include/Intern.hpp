@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:41:13 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 15:59:34 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:32:18 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined INTERN_HPP
+#ifndef INTERN_HPP
 # define INTERN_HPP
 
 # include "Form.hpp"
@@ -27,4 +27,4 @@ class Intern
 		Form	*makeForm(const std::string &name, const std::string &target);
 };
 
-#endif /* !defined INTERN_HPP */
+#endif /* INTERN_HPP */

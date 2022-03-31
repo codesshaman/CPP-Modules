@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:51:19 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 18:13:22 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:34:50 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined FORM_HPP
+#ifndef FORM_HPP
 # define FORM_HPP
 
 # include "Bureaucrat.hpp"
@@ -22,10 +22,12 @@ class Form
 {
 	private:
 		Form(void);
+
 		const std::string	_name;
 		bool				_is_signed;
 		int					_min_grade_to_sign;
 		int					_min_grade_to_execute;
+
 	public:
 		Form(const std::string &, int, int);
 		Form(const Form &);
@@ -44,6 +46,7 @@ class Form
 
 		bool				beSigned(const Bureaucrat &);
 
+	public:
 		class GradeTooHighException: public std::exception {
 			public:
 				virtual const char *what() const throw();
@@ -57,4 +60,4 @@ class Form
 
 std::ostream & operator<<(std::ostream &o, Form const &f);
 
-#endif /* !defined FORM_HPP */
+#endif /* FORM_HPP */

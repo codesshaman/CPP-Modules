@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:34:34 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 16:46:30 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:35:41 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined ROBOTOMY_REQUEST_FORM_HPP
+#ifndef ROBOTOMY_REQUEST_FORM_HPP
 # define ROBOTOMY_REQUEST_FORM_HPP
 
 # include "Form.hpp"
@@ -21,6 +21,7 @@ class RobotomyRequestForm : public Form
 	private:
 		std::string	_target;
 		RobotomyRequestForm(void);
+
 	public:
 		RobotomyRequestForm(const std::string &);
 		RobotomyRequestForm(const RobotomyRequestForm &);
@@ -31,4 +32,4 @@ class RobotomyRequestForm : public Form
 		void				execute(const Bureaucrat &) const;
 };
 
-#endif /* !defined ROBOTOMY_REQUEST_FORM_HPP */
+#endif /* ROBOTOMY_REQUEST_FORM_HPP */

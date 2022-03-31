@@ -6,18 +6,13 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:04 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/14 17:44:17 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:31:13 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
-
-Bureaucrat::Bureaucrat(void): _name(""), _grade(1)
-{
-	return ;
-}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade): _name(name), _grade(grade)
 {
