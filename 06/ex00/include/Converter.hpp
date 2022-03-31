@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:02:59 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/20 11:58:31 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:55:08 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined CONVERTER_HPP
+#ifndef CONVERTER_HPP
 # define CONVERTER_HPP
 
 # include <string>
@@ -43,14 +43,15 @@ class	Converter
 		void		printAsChar(void) const;
 		void		printAsInt(void) const;
 		void		printAsFloat(void) const;
-		void		printAsDouble(void) const;	
+		void		printAsDouble(void) const;
+
 	public:
 		Converter(void);
 		Converter(const Converter &);
 		Converter	& operator=(const Converter &);
 		~Converter(void);
 
-		bool		convert(const std::string);
+		int			convert(const std::string);
 };
 
-#endif /* !defined CONVERT_HPP */
+#endif /* CONVERT_HPP */

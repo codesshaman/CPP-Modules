@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:01:52 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/20 21:22:43 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:03:26 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,17 @@ Base	*generate(void)
 {
 	int		n = (rand() % 3) + 1;
 
-	std::cout << "n is " << n << std::endl;
 	if (n == 1)
+	{
+		std::cout << "Generated a new A" << std::endl;
 		return (new A());
+	}
 	if (n == 2)
+	{
+		std::cout << "Generated a new B" << std::endl;
 		return (new B());
+	}
+	std::cout << "Generated a new C" << std::endl;
 	return (new C());
 }
 

@@ -3,7 +3,8 @@
 test_convert() {
 	echo "./convert" "$*"
 	./convert $@
-	echo "\ncheck output and press any key to continue"
+	printf "Press any key to continue... "
+	printf "\n"
 	read -n1
 }
 
@@ -51,7 +52,9 @@ test_convert 5000000000000000000000000000000000000000000000000000000000000000000
 
 test_convert x 0.3542 64 62.0f
 
-test_convert bonjour
+test_convert hello_world
+
+test_convert dnziuaunigurnuifeznfeziufneizuferiouhgzoreuighureghiureozhguihgreizgohrzuighrugihzerghuriehguhgerfdghreoiuzg
 
 test_convert 18f
 

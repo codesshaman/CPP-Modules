@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Converter.Cpp                                      :+:      :+:    :+:   */
+/*   Converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:35:00 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/20 12:41:36 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:55:03 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,14 +232,14 @@ void	Converter::printTypes(void) const
 	this->printAsDouble();
 }
 
-bool	Converter::convert(const std::string str)
+int	Converter::convert(const std::string str)
 {
 	if (!this->getType(str))
 	{
 		std::cerr << "error: invalid input" << std::endl;
-		return (false);
+		return (EXIT_FAILURE);
 	}
 	this->setVariables(str);
 	this->printTypes();
-	return (true);
+	return (EXIT_SUCCESS);
 }

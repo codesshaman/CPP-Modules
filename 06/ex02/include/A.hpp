@@ -6,11 +6,11 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:00:34 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/20 21:00:59 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:54:07 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined A_HPP
+#ifndef A_HPP
 # define A_HPP
 
 # include "Base.hpp"
@@ -21,4 +21,4 @@ class A : public Base
 		~A(void);
 };
 
-#endif /* !defined A_HPP */
+#endif /* A_HPP */
