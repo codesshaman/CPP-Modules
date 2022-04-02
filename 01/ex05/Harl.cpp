@@ -14,6 +14,8 @@
 #include <string>
 #include <iostream>
 
+const std::string	Harl::_levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
 void	Harl::debug(void)
 {
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-"
@@ -43,14 +45,13 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	int			i;
-	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void		(Harl::*complaints[4])(void) = {&Harl::debug,
 												&Harl::info,
 												&Harl::warning,
 												&Harl::error};
 
 	for (i = 0; i < 4; i++)
-		if (level == levels[i])
+		if (level == this->_levels[i])
 			(this->*complaints[i])();
 }
 

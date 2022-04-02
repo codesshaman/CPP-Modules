@@ -18,6 +18,8 @@
 class Harl
 {
 	private:
+		static const std::string	_levels[4];
+
 		void	debug(void);
 		void	info(void);
 		void	warning(void);
