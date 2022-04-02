@@ -18,15 +18,21 @@
 class Harl
 {
 	private:
+		Harl();
+
+		int							_filter;
+		static const std::string	_levels[4];
+
 		void	debug(void);
 		void	info(void);
 		void	warning(void);
 		void	error(void);
-	public:
-		~Harl();
-		Harl();
 
-		void	complain(std::string, std::string);
+	public:
+		Harl(const std::string &);
+		~Harl();
+
+		void	complain(std::string);
 };
 
 #endif /* HARL_HPP */

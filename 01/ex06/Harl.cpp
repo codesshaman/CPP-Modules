@@ -14,63 +14,75 @@
 #include <string>
 #include <iostream>
 
+const std::string	Harl::_levels[4] = {"ERROR", "WARNING", "INFO", "DEBUG"};
+
 void	Harl::debug(void)
 {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-"
+	std::cout << "[DEBUG]" << std::endl << "I love having extra bacon for my 7XL-double-cheese-triple-"
 		"pickle-specialketchup burger. I really do !" << std::endl;
 }
 
 void	Harl::info(void)
 {
-	std::cout << "I cannot believe adding extra bacon costs more money."
+	std::cout << "[INFO]" << std::endl << "I cannot believe adding extra bacon costs more money."
 		" You didn't put enough bacon in my burger ! If you did, I wouldn't be"
 		" asking for more !" << std::endl;
 }
 
 void	Harl::warning(void)
 {
-	std::cout << "I think I deserve to have some extra bacon for free. I've"
+	std::cout << "[WARNING]" << std::endl << "I think I deserve to have some extra bacon for free. I've"
 		" been coming for years whereas you started working here since last month."
 		<< std::endl;
 }
 
 void	Harl::error(void)
 {
-	std::cout << "This is unacceptable ! I want to speak to the manager now."
+	std::cout << "[ERROR]" << std::endl << "This is unacceptable ! I want to speak to the manager now."
 		<< std::endl;
 }
 
-static int	get_index(std::string *levels, std::string level)
+static int	get_filter(const std::string *levels, const std::string &s)
 {
-	int		i;
-	int		index;
-
-	index = -1;
-	for (i = 0; i < 4; i++)
-		if (level == levels[i])
-			index = i;
-	return (index);
+	for (int i = 0; i < 4; i++)
+		if (s == levels[i])
+			return (i);
+	return (-1);
 }
 
-void	Harl::complain(std::string level, std::string filter)
+void	Harl::complain(std::string filter)
 {
-	int			level_index;
-	int			filter_index;
-	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void		(Harl::*complaints[4])(void) = {&Harl::debug,
-												&Harl::info,
-												&Harl::warning,
-												&Harl::error};
+	int	level = get_filter(this->_levels, filter);
 
-	level_index = get_index(levels, level);
-	filter_index = get_index(levels, filter);
-	if (level_index - filter_index >= 0)
-		(this->*complaints[level_index])();
+	if (level <= this->_filter)
+	{
+		switch (level)
+		{
+			case 3:
+				this->debug();
+				break ;
+			case 2:
+				this->info();
+				break ;
+			case 1:
+				this->warning();
+				break ;
+			default:
+				this->error();
+		}
+	}
 }
 
-Harl::Harl(void)
+Harl::Harl(void): _filter(4)
 {
 	return ;
+}
+
+Harl::Harl(const std::string &s)
+{
+	this->_filter = get_filter(this->_levels, s);
+	if (this->_filter == -1)
+		std::cout << "* Probably complaining about insignificant problems... *" << std::endl;
 }
 
 Harl::~Harl(void)
