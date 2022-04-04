@@ -47,6 +47,7 @@ static int	get_filter(const std::string *levels, const std::string &s)
 	for (int i = 0; i < 4; i++)
 		if (s == levels[i])
 			return (i);
+	std::cout << "* Probably complaining about insignificant problems... *" << std::endl;
 	return (-1);
 }
 
@@ -73,16 +74,9 @@ void	Harl::complain(std::string filter)
 	}
 }
 
-Harl::Harl(void): _filter(4)
-{
-	return ;
-}
-
 Harl::Harl(const std::string &s)
 {
 	this->_filter = get_filter(this->_levels, s);
-	if (this->_filter == -1)
-		std::cout << "* Probably complaining about insignificant problems... *" << std::endl;
 }
 
 Harl::~Harl(void)

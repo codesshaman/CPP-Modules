@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 17:08:02 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/30 15:31:36 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/04/02 20:30:31 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Weapon
 		std::string	_type;
 
 	public:
-		Weapon();
+		Weapon(void);
 		Weapon(std::string);
-		~Weapon();
+		~Weapon(void);
 
 		const std::string	getType(void)const;
 		void				setType(std::string type);

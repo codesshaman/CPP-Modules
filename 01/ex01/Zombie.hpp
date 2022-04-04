@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 10:56:47 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/30 15:16:55 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/04/02 20:30:59 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Zombie
 {
     private:
         std::string _name;
+
     public:
         Zombie(void);
         Zombie(std::string);

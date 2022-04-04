@@ -18,7 +18,7 @@
 class Harl
 {
 	private:
-		Harl();
+		Harl(void);
 
 		int							_filter;
 		static const std::string	_levels[4];
@@ -30,7 +30,7 @@ class Harl
 
 	public:
 		Harl(const std::string &);
-		~Harl();
+		~Harl(void);
 
 		void	complain(std::string);
 };
