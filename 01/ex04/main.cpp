@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 10:30:39 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/30 15:35:30 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/04/04 20:59:56 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	read_file(std::ifstream *f, std::string &line)
 {
 	std::string		temp;
 
-	line.empty();
+	line = "";
 	while ((*f).is_open() && std::getline(*f, temp))
 	{
 		line.append(temp);
