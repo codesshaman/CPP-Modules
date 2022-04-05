@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:37:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 12:49:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:04:32 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	Span::shortestSpan(void) const
 	std::vector<int>			numbers = this->_numbers;
 
 	if (numbers.size() <= 1)
-		throw std::logic_error("not enough numbers two return a span");
+		throw std::logic_error("not enough numbers to return a span");
 	ret = -1;
 	for (it = numbers.begin(); it + 1 != numbers.end(); it++)
 	{
@@ -86,7 +86,7 @@ int	Span::longestSpan(void) const
 	std::vector<int>			numbers = this->_numbers;
 
 	if (numbers.size() <= 1)
-		throw std::logic_error("not enough numbers two return a span");
+		throw std::logic_error("not enough numbers to return a span");
 	ret = -1;
 	for (it = numbers.begin(); it + 1 != numbers.end(); it++)
 	{
