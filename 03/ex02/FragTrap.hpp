@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:05:21 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:07:50 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/14 21:37:31 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class FragTrap : public ClapTrap
 		FragTrap	& operator=(const FragTrap &);
 		~FragTrap(void);
 
-		void		highFivesGuys(void)const;
+		void		highFivesGuys(void) const;
 };
 
 #endif /* FRAGTRAP_HPP */

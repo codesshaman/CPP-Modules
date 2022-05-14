@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:14:22 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:08:09 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/14 21:38:26 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap	& operator=(const ScavTrap &);
 		~ScavTrap(void);
 
-		void	guardGate(void)const;
+		void	guardGate(void) const;
+		void	attack(const std::string& target);
 };
 
 #endif /* SCAVTRAP_HPP */
