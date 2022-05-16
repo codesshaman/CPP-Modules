@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:41:13 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:32:18 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:52:31 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 class Intern
 {
-	public:
-		Intern(void);
-		Intern(const Intern &);
-		Intern	& operator=(const Intern &);
-		~Intern(void);
+public:
+	Intern();
+	Intern(const Intern&);
+	Intern& operator=(const Intern&);
+	~Intern();
 
-		Form	*makeForm(const std::string &name, const std::string &target);
+	Form *makeForm(const std::string& name, const std::string& target);
 };
 
 #endif /* INTERN_HPP */

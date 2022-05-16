@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:51:19 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:35:24 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:37:25 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,50 +20,50 @@ class Bureaucrat;
 
 class Form
 {
-	private:
-		Form(void);
+private:
+	const std::string _name;
+	bool              _is_signed;
+	int               _min_grade_to_sign;
+	int               _min_grade_to_execute;
 
-		const std::string	_name;
-		bool				_is_signed;
-		int					_min_grade_to_sign;
-		int					_min_grade_to_execute;
+public:
+	Form(const std::string&, int, int);
+	Form(const Form&);
+	Form& operator=(const Form&);
+	virtual ~Form();
 
+	const std::string& getName() const;
+	int                getGradeToSign() const;
+	int                getGradeToExecute() const;
+	bool               isSigned() const;
+	void               incrementGradeToSign();
+	void               decrementGradeToSign();
+	void               incrementGradeToExecute();
+	void               decrementGradeToExecute();
+	bool               beSigned(const Bureaucrat&);
+	bool               isExecutable(const Bureaucrat &) const;
+	virtual void       execute(const Bureaucrat &) const = 0;
+
+public:
+	class GradeTooHighException: public std::exception
+	{
 	public:
-		Form(const std::string &, int, int);
-		Form(const Form &);
-		Form	& operator=(const Form &);
-		virtual ~Form(void);
+		virtual const char *what() const throw();
+	};
 
-		std::string const	&getName(void) const;
-		int					getGradeToSign(void) const;
-		int					getGradeToExecute(void) const;
-		bool				isSigned(void) const;
-
-		void				incrementGradeToSign(void);
-		void				decrementGradeToSign(void);
-		void				incrementGradeToExecute(void);
-		void				decrementGradeToExecute(void);
-
-		bool				beSigned(const Bureaucrat &);
-
+	class GradeTooLowException: public std::exception
+	{
 	public:
-		class GradeTooHighException: public std::exception {
-			public:
-				virtual const char *what() const throw();
-		};
+		virtual const char *what() const throw();
+	};
 
-		class GradeTooLowException: public std::exception {
-			public:
-				virtual const char *what() const throw();
-		};
+	class CannotExecuteException: public std::exception {
+		public:
+			virtual const char *what() const throw();
+	};
 
-		virtual void		execute(const Bureaucrat &) const = 0;
-		bool				isExecutable(const Bureaucrat &) const;
-
-		class CannotExecuteException: public std::exception {
-			public:
-				virtual const char *what() const throw();
-		};
+private:
+	Form();
 };
 
 std::ostream & operator<<(std::ostream &o, Form const &f);

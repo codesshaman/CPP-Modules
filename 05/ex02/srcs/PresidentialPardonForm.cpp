@@ -6,50 +6,50 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:11:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 16:14:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:45:49 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void):
-	Form("PresidentialPardonForm", 25, 5), _target("")
+PresidentialPardonForm::PresidentialPardonForm()
+	: Form("PresidentialPardonForm", 25, 5),
+	  _target("")
 {
-	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target):
-	Form("PresidentialPardonForm", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+	: Form("PresidentialPardonForm", 25, 5),
+	  _target(target)
 {
-	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src):
-	Form("PresidentialPardonForm", 25, 5), _target(src._target)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &x)
+	: Form("PresidentialPardonForm", 25, 5),
+	  _target(x._target)
 {
-	return ;
 }
 
-PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
+PresidentialPardonForm&
+PresidentialPardonForm::operator=(const PresidentialPardonForm&)
 {
-	(void)rhs;
-	return (*this);
+	return *this;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm(void)
+PresidentialPardonForm::~PresidentialPardonForm()
 {
-	return ;
 }
 
-const std::string	&PresidentialPardonForm::getTarget(void) const
+const std::string&
+PresidentialPardonForm::getTarget() const
 {
-	return (this->_target);
+	return _target;
 }
 
-void	PresidentialPardonForm::execute(const Bureaucrat &executor) const
+void
+PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	if (!this->isExecutable(executor))
 		throw (Form::CannotExecuteException());
 	std::cout << "Zaphod Beeblebrox forgave " << this->_target << "." << std::endl;
-	return ;
 }

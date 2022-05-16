@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:34:34 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:35:41 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:38:32 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@
 
 class RobotomyRequestForm : public Form
 {
-	private:
-		std::string	_target;
-		RobotomyRequestForm(void);
+private:
+	std::string	_target;
 
-	public:
-		RobotomyRequestForm(const std::string &);
-		RobotomyRequestForm(const RobotomyRequestForm &);
-		RobotomyRequestForm	& operator=(const RobotomyRequestForm &);
-		~RobotomyRequestForm(void);
+public:
+	RobotomyRequestForm(const std::string &);
+	RobotomyRequestForm(const RobotomyRequestForm &);
+	RobotomyRequestForm	& operator=(const RobotomyRequestForm &);
+	~RobotomyRequestForm();
 
-		const std::string	&getTarget(void) const;
-		void				execute(const Bureaucrat &) const;
+	const std::string &getTarget() const;
+	void               execute(const Bureaucrat &) const;
+
+private:
+	RobotomyRequestForm();
 };
 
 #endif /* ROBOTOMY_REQUEST_FORM_HPP */
