@@ -14,7 +14,7 @@
 #include "ICharacter.hpp"
 #include <iostream>
 
-Cure::Cure(void)
+Cure::Cure()
 {
 	this->_type = "cure";
 	return ;
@@ -28,19 +28,18 @@ Cure::Cure(const Cure &)
 
 Cure	&Cure::operator=(const Cure &)
 {
-	return (*this);
+	return *this;
 }
 
-Cure::~Cure(void)
+Cure::~Cure()
 {
 	return ;
 }
 
-AMateria	*Cure::clone(void) const
+AMateria*
+Cure::clone() const
 {
-	Cure	*cure = new Cure();
-
-	return (cure);
+	return new Cure(*this);
 }
 
 void	Cure::use(ICharacter &target)

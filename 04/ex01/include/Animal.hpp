@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:18:50 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:26:39 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:55:57 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ class Animal
 		std::string	_type;
 
 	public:
-		Animal(void);
+		Animal();
 		Animal(const Animal &);
-		Animal		& operator=(const Animal &);
-		virtual	~Animal(void);
+		Animal& operator=(const Animal &);
+		virtual	~Animal();
 		
-		virtual void				makeSound(void)const;
-		virtual const std::string	getType(void)const;
+		virtual void              makeSound() const;
+		virtual const std::string getType() const;
 };
 
 #endif /* ANIMAL_HPP */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 14:22:49 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:14:20 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:56:04 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@
 
 class IMateriaSource
 {
-	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+public:
+	virtual ~IMateriaSource()
+	{
+	}
+
+	virtual void      learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria(const std::string& type) = 0;
 };
 
 #endif /* I_MATERIA_SOURCE_HPP */

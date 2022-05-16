@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:50:54 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:26:25 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:26:20 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #define NB_ANIMALS	4
 
-int	main(void)
+int	main()
 {
 	{ // subject tests
 		const Animal* j = new Dog();
@@ -32,14 +32,15 @@ int	main(void)
 		int		i;
 		Animal	*animals[NB_ANIMALS];
 
-		std::cout << ">>> CREATING CATS <<<" << std::endl;
+		std::cout << ">>> CREATING ANIMALS <<<" << std::endl;
+		std::cout << ">> CREATING CATS <<" << std::endl;
 		for (i = 0; i < NB_ANIMALS / 2; i++)
 		{
 			std::cout << "Animal n°" << i << ":" << std::endl;
 			animals[i] = new Cat();
 			std::cout << "--------------" << std::endl;
 		}
-		std::cout << ">>> CREATING DOGS <<<" << std::endl;
+		std::cout << ">> CREATING DOGS <<" << std::endl;
 		for (; i < NB_ANIMALS; i++)
 		{
 			std::cout << "Animal n°" << i << ":" << std::endl;
@@ -64,9 +65,9 @@ int	main(void)
 		Cat		cat("sleep");
 		Cat		copycat;
 
-		cat.printIdeas();
-		copycat.printIdeas();
 		copycat = cat;
+		cat.printIdeas();
+		std::cout << "-----" << std::endl;
 		copycat.printIdeas();
 	}
 	return (0);

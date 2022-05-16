@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:20:50 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:25:41 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:06:35 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,25 @@
 
 class Character : public ICharacter
 {
-	private:
-		Character(void);
-		std::string	_name;
-		AMateria	*_inventory[4];
-		int			_nb_items;
+private:
+	std::string _name;
+	int         _nb_items;
+	AMateria*   _inventory[4];
 
-	public:
-		Character(std::string const &);
-		Character(const Character &);
-		Character	& operator=(const Character &);
-		~Character(void);
+public:
+	Character(std::string const &);
+	Character(const Character &);
+	Character& operator=(const Character &);
+	~Character();
 
-		std::string const & getName(void)const;
+	const std::string& getName() const;
 
-		void equip(AMateria *m);
-		void unequip(int idx);
-		void use(int idx, ICharacter &target);
+	void equip(AMateria *m);
+	void unequip(int idx);
+	void use(int idx, ICharacter &target);
+
+private:
+	Character();
 };
 
 #endif /* CHARACTER_HPP */

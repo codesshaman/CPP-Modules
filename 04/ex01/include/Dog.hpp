@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:18:59 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:26:55 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:29:14 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,15 @@ class Dog : public Animal
 		Brain	*_brain;
 
 	public:
-		Dog(void);
+		Dog();
 		Dog(const Dog &);
-		Dog		& operator=(const Dog &);
-		~Dog(void);
+		Dog(const std::string&);
+		Dog& operator=(const Dog&);
+		~Dog();
 
-		void				makeSound(void)const;
-		const std::string	getType(void)const;
-
-		Dog(const std::string);
-		void	printIdeas(void)const;
+		void              makeSound()  const;
+		void	          printIdeas() const;
+		const std::string getType()    const;
 };
 
 #endif /* DOG_HPP */

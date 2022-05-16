@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:37:01 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/14 14:17:14 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:56:00 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "MateriaSource.hpp"
 #include <iostream>
 
-int	main(void)
+int	main()
 {
 	{ // subject tests
 		IMateriaSource* src = new MateriaSource();
@@ -49,7 +49,7 @@ int	main(void)
 
 		AMateria	*ice = src->createMateria("ice");
 		AMateria	*ice2 = new Ice();
-		AMateria	*ice3 = src->createMateria("ice");
+		AMateria	*ice3 = ice->clone();
 		AMateria	*cure = new Cure();
 		AMateria	*cure2 = src->createMateria("cure");
 

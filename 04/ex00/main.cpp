@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:50:54 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 13:12:16 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:22:06 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "WrongCat.hpp"
 #include <iostream>
 
-int	main(void)
+int	main()
 {
 	{ // subject tests
 		const Animal* meta = new Animal();
@@ -36,15 +36,17 @@ int	main(void)
 	}
 	std::cout << "-------------" << std::endl;
 	{ // WrongAnimal tests
-		const WrongAnimal *w = new WrongAnimal();
-		const WrongCat *c = new WrongCat();
+		const WrongAnimal* animal = new WrongAnimal();
+		const WrongAnimal* wcat = new WrongCat();
+		const WrongCat* cat = new WrongCat();
 
-		std::cout << c->getType() << std::endl;
-		c->makeSound();
-		w->makeSound();
+		animal->makeSound();
+		wcat->makeSound(); //will output the wronganimal sound!
+		cat->makeSound(); //will output the wrongcat sound!
 
-		delete (w);
-		delete (c);
+		delete (animal);
+		delete (wcat);
+		delete (cat);
 	}
 	std::cout << "-------------" << std::endl;
 	{ // more tests

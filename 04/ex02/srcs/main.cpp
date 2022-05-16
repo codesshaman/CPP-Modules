@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:50:54 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/11 17:17:27 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:56:02 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,17 @@
 
 #define NB_ANIMALS	4
 
-int	main(void)
+int	main()
 {
-/*	{ // Trying to create animals does not compile!
+/*
+	{ // Trying to create animals does not compile
 		Animal	animal;
 		Animal	*animal2 = new Animal();
 
 		delete (animal2);
-	}*/
-	{ // We can still create cat and dogs normally
+	}
+*/
+	{
 		Animal	*cat = new Cat("sleep");
 		Dog		dog;
 

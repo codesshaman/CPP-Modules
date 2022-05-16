@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 14:24:33 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/14 13:55:32 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:30:44 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,41 +15,44 @@
 #include <string>
 #include <iostream>
 
-MateriaSource::MateriaSource(void): _nb_items(0)
+MateriaSource::MateriaSource()
+	: _nb_items(0)
 {
 	int		i;
 
 	for (i = 0;i < 4; i++)
-		this->_sources[i] = nullptr;
+		this->_sources[i] = 0;
 	return ;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &src): _nb_items(0)
+MateriaSource::MateriaSource(const MateriaSource &x)
+	: _nb_items(0)
 {
 	int		i;
 
-	for (i = 0; i < src._nb_items; i++)
-		this->learnMateria(src._sources[i]->clone());
+	for (i = 0; i < x._nb_items; i++)
+		this->learnMateria(x._sources[i]->clone());
 	while (i < 4)
-		this->_sources[i++] = nullptr;
+		this->_sources[i++] = 0;
 	return ;
 }
 
-MateriaSource	&MateriaSource::operator=(const MateriaSource &rhs)
+MateriaSource&
+MateriaSource::operator=(const MateriaSource &x)
 {
 	int		i;
 
 	for (i = 0; i < this->_nb_items; i++)
 		delete (this->_sources[i]);
 	this->_nb_items = 0;
-	for (i = 0; i < rhs._nb_items; i++)
-		this->learnMateria(rhs._sources[i]->clone());
+	for (i = 0; i < x._nb_items; i++)
+		this->learnMateria(x._sources[i]->clone());
 	for (i = this->_nb_items; i < 4; i++)
-		this->_sources[i] = nullptr;
-	return (*this);
+		this->_sources[i] = 0;
+	return *this;
 }
 
-MateriaSource::~MateriaSource(void)
+MateriaSource::~MateriaSource()
 {
 	int		i;
 
@@ -58,25 +61,25 @@ MateriaSource::~MateriaSource(void)
 	return ;
 }
 
-void	MateriaSource::learnMateria(AMateria *m)
+void
+MateriaSource::learnMateria(AMateria *m)
 {
 	if (this->_nb_items >= 4)
 	{
 		std::cout << "This source is already full!" << std::endl;
 		return ;
 	}
-	if (m == nullptr)
+	if (m == 0)
 		return ;
 	this->_sources[this->_nb_items++] = m;
 	return ;
 }
 
-AMateria	*MateriaSource::createMateria(std::string const &type)
+AMateria*
+MateriaSource::createMateria(std::string const &type)
 {
-	int		i;
-
-	for (i = 0; i < this->_nb_items; i++)
+	for (int i = 0; i < this->_nb_items; i++)
 		if (this->_sources[i]->getType() == type)
 			return (this->_sources[i]->clone());
-	return (nullptr);
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:25:10 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:15:48 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:30:44 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <iostream>
 #include <string>
 
-AMateria::AMateria(void): _type("AMateria")
+AMateria::AMateria(): _type("AMateria")
 {
 	return ;
 }
 
-AMateria::AMateria(const AMateria &src): _type(src._type)
+AMateria::AMateria(const AMateria &x): _type(x._type)
 {
 	return ;
 }
@@ -31,21 +31,21 @@ AMateria::AMateria(const std::string &type): _type(type)
 
 AMateria	&AMateria::operator=(const AMateria &)
 {
-	return (*this);
+	return *this;
 }
 
-AMateria::~AMateria(void)
+AMateria::~AMateria()
 {
 	return ;
 }
 
-const std::string &AMateria::getType(void) const
+const std::string&
+AMateria::getType() const
 {
-	return (this->_type);
+	return this->_type;
 }
 
-void	AMateria::use(ICharacter &target)
+void
+AMateria::use(ICharacter &)
 {
-	(void)target;
-	return ;
 }

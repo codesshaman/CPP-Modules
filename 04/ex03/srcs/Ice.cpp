@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 11:50:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/14 14:00:29 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:56:00 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "AMateria.hpp"
 #include <iostream>
 
-Ice::Ice(void)
+Ice::Ice()
 {
 	this->_type = "ice";
 	return ;
@@ -27,24 +27,25 @@ Ice::Ice(const Ice &)
 	return ;
 }
 
-Ice	&Ice::operator=(const Ice &)
+Ice&
+Ice::operator=(const Ice &)
 {
-	return (*this);
+	return *this;
 }
 
-Ice::~Ice(void)
+Ice::~Ice()
 {
 	return ;
 }
 
-AMateria	*Ice::clone(void) const
+AMateria*
+Ice::clone() const
 {
-	Ice		*ice = new Ice(*this);
-
-	return (ice);
+	return new Ice(*this);
 }
 
-void	Ice::use(ICharacter &target)
+void
+Ice::use(ICharacter &target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	return ;

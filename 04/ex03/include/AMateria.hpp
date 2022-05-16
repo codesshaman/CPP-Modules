@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:20:43 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:14:20 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:08:44 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,23 @@
 
 class AMateria
 {
-	private:
-		AMateria	& operator=(const AMateria &);
+private:
+	AMateria& operator=(const AMateria &);
 
-	protected:
-		AMateria(void);
-		AMateria(const AMateria &);
+protected:
+	std::string	_type;
 
-		std::string	_type;
+protected:
+	AMateria();
+	AMateria(const AMateria &);
 
-	public:
-		AMateria(std::string const & type);
-		virtual ~AMateria(void);
+public:
+	AMateria(std::string const & type);
+	virtual ~AMateria();
 
-		std::string const & getType() const;
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+	const std::string& getType() const;
+	virtual AMateria*  clone() const = 0;
+	virtual void       use(ICharacter& target);
 };
 
 #endif /* A_MATERIA_HPP */
