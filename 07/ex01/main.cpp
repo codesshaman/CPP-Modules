@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:05:32 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 12:17:29 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 21:16:24 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 #include <string>
 
 // test purposes
-template <typename T> void	print(const T &a) 
+template <class Tp>
+void
+print(const Tp &a) 
 {
 	std::cout << a;
 }

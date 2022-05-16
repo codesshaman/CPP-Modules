@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 11:50:08 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 12:18:32 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 21:27:52 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,54 +16,62 @@
 # include <iostream>
 # include <stdexcept> // std::out_of_range
 
-template <typename T>
+template <class Tp>
 class Array
 {
-	private:
-		T				*_array;
-		unsigned int	_array_size;
+private:
+	Tp*          _array;
+	unsigned int _array_size;
 
-	public:
-		Array<T>(void): _array(nullptr), _array_size(0) {}
+public:
+	Array() : _array(nullptr), _array_size(0) {}
+	Array(unsigned int array_size);
+	Array(const Array &src);
+	Array& operator=(const Array& x);
+	Tp& operator[](const unsigned int index) const;
+	~Array<Tp>() {}
 
-		Array<T>(unsigned int array_size): _array_size(array_size)
-		{
-			this->_array = new T[array_size];
-		}
-
-		Array<T>(const Array<T> &src): _array_size(src._array_size)
-		{
-			*this = src;
-		}
-
-		Array<T>		& operator=(const Array<T> &rhs)
-		{
-			unsigned int	i;
-
-			if (this == &rhs)
-				return (*this);
-			if (this->_array && this->_array_size)
-				delete [] this->_array;
-			this->_array_size = rhs._array_size;
-			this->_array = new T[this->_array_size];
-			for (i = 0; i < rhs._array_size; i++)
-				this->_array[i] = rhs._array[i];
-			return (*this);
-		}
-		
-		T				& operator[](const unsigned int index) const
-		{
-			if (index >= this->_array_size)
-				throw (std::out_of_range("Index out of range"));
-			return (this->_array[index]);
-		}
-
-		~Array<T>(void) {}
-
-		unsigned int	size(void) const
-		{
-			return (this->_array_size);
-		}
+	unsigned int size() const {return (this->_array_size);}
 };
+
+template <class Tp>
+Array<Tp>::Array(unsigned int array_size)
+	: _array_size(array_size)
+{
+	this->_array = new Tp[array_size];
+}
+
+template <class Tp>
+Array<Tp>::Array(const Array& x)
+	: _array_size(x._array_size)
+{
+	*this = x;
+}
+
+template <class Tp>
+Array<Tp>&
+Array<Tp>::operator=(const Array<Tp>& x)
+{
+	unsigned int	i;
+
+	if (this == &x)
+		return (*this);
+	if (this->_array && this->_array_size)
+		delete [] this->_array;
+	this->_array_size = x._array_size;
+	this->_array = new Tp[this->_array_size];
+	for (i = 0; i < x._array_size; i++)
+		this->_array[i] = x._array[i];
+	return (*this);
+}
+
+template <class Tp>
+Tp&
+Array<Tp>::operator[](const unsigned int index) const
+{
+	if (index >= this->_array_size)
+		throw (std::out_of_range("array"));
+	return _array[index];
+}
 
 #endif /* ARRAY_HPP */
