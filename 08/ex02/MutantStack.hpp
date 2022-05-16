@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:12:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/04/05 15:59:59 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 21:49:01 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,28 @@
 # include <stack>
 #include <deque>
 
-template <typename T>
-class MutantStack : public std::stack<T>
+template <class Tp>
+class MutantStack : public std::stack<Tp>
 {
-	public:
-		typedef typename std::stack<T>::container_type::iterator		iterator;
-		typedef typename std::stack<T>::container_type::const_iterator	const_iterator;
+public:
+	typedef typename std::stack<Tp>::container_type::iterator       iterator;
+	typedef typename std::stack<Tp>::container_type::const_iterator const_iterator;
 
-		/* construct/copy/destroy*/
-		MutantStack(void) {}
-		~MutantStack(void) {}
-		MutantStack(const MutantStack<T> &src) {*this = src;}
+	MutantStack(void) {}
+	~MutantStack(void) {}
+	MutantStack(const MutantStack& src) {*this = src;}
 
-		MutantStack<T>	&	operator=(const MutantStack<T> &rhs) {
-			std::stack<T>::operator=(rhs);
-			return (*this);
-		}
+	MutantStack& operator=(const MutantStack& x)
+	{
+		std::stack<Tp>::operator=(x);
+		return (*this);
+	}
 
-		/* iterators */
-		iterator			begin(void)			{return (this->c.begin());}
-		const_iterator		begin(void)	const	{return (this->c.begin());}
-		iterator			end(void)			{return (this->c.end());}
-		const_iterator		end(void)	const	{return (this->c.end());}
+	iterator       begin(void)       {return (this->c.begin());}
+	const_iterator begin(void) const {return (this->c.begin());}
 
+	iterator       end(void)         {return (this->c.end());}
+	const_iterator end(void)   const {return (this->c.end());}
 };
 
 #endif /* MUTANT_STACK_HPP */
