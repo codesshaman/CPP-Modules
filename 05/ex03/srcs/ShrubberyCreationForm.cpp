@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:52:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:04:11 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/17 16:11:30 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	if (!isExecutable(executor))
 		throw (Form::CannotExecuteException());
 	file_path = this->_target + "_shrubbery";
-	file.open(file_path, std::fstream::out);
+	file.open(file_path.c_str(), std::fstream::out);
 	file << "       _-_" << std::endl;
 	file << "    /~~   ~~\\" << std::endl;
 	file << " /~~         ~~\\" << std::endl;

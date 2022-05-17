@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:29 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:04:40 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/17 14:40:21 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	Bureaucrat& operator=(const Bureaucrat&);
 	~Bureaucrat();
 
-	const std::string &getName() const;
+	const std::string& getName() const;
 	int                getGrade() const;
 	void               incrementGrade();
 	void               decrementGrade();

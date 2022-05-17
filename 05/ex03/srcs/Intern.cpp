@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:59:48 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:00:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/17 16:12:05 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ Form*
 Intern::makeForm(const std::string& name, const std::string& target)
 {
 	int			index;
-	Form		*form = nullptr;
+	Form		*form = 0;
 	std::string	names[6] = {"shrubbery creation", "robotomy request", "presidential pardon",};
 	Form		*(*forms[3])(const std::string &) = {&newShrubberyCreationForm,
 													&newRobotomyRequestForm,

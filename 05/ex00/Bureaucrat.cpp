@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:04 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:42:51 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/17 14:40:53 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <string>
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade)
+Bureaucrat::Bureaucrat(const std::string& name, int grade)
 	: _name(name),
 	  _grade(grade)
 {
@@ -25,7 +25,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
 //	std::cout << "Created bureaucrat " << this->_name << " with grade " << this->_grade << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &x)
+Bureaucrat::Bureaucrat(const Bureaucrat& x)
 	: _name(x._name),
 	  _grade(x._grade)
 {
@@ -78,13 +78,13 @@ Bureaucrat::decrementGrade()
 const char*
 Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "grade too high";
+	return ("grade too high");
 }
 
 const char*
 Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "grade too low";
+	return ("grade too low");
 }
 
 std::ostream&
