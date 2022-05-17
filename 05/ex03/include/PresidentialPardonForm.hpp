@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:34:45 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:36:13 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:52:58 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,20 @@ class Form;
 
 class PresidentialPardonForm : public Form
 {
-	private:
-		std::string	_target;
-		PresidentialPardonForm(void);
+private:
+	std::string _target;
 
-	public:
-		PresidentialPardonForm(const std::string &);
-		PresidentialPardonForm(const PresidentialPardonForm &);
-		PresidentialPardonForm	& operator=(const PresidentialPardonForm &);
-		~PresidentialPardonForm(void);
+public:
+	PresidentialPardonForm(const std::string&);
+	PresidentialPardonForm(const PresidentialPardonForm&);
+	PresidentialPardonForm& operator=(const PresidentialPardonForm&);
+	~PresidentialPardonForm();
 
-		const std::string	&getTarget(void) const;
-		void				execute(const Bureaucrat &) const;
+	const std::string& getTarget() const;
+	void               execute(const Bureaucrat&) const;
+
+private:
+	PresidentialPardonForm();
 };
 
 #endif /* PRESIDENTIAL_PARDON_FORM_HPP */

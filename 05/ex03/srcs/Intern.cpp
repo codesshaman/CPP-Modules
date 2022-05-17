@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:59:48 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 17:53:07 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 21:00:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,49 +16,50 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-Intern::Intern(void)
+Intern::Intern()
 {
-	return ;
 }
 
-Intern::Intern(const Intern &src)
+Intern::Intern(const Intern&)
 {
-	(void)src;
-	return ;
 }
 
-Intern	&Intern::operator=(const Intern &rhs)
+Intern&
+Intern::operator=(const Intern&)
 {
-	(void)rhs;
-	return (*this);
+	return *this;
 }
 
-Intern::~Intern(void)
+Intern::~Intern()
 {
-	return ;
 }
 
-Form	*newShrubberyCreationForm(const std::string &target)
+Form*
+newShrubberyCreationForm(const std::string& target)
 {
-	return (new ShrubberyCreationForm(target));
+	return new ShrubberyCreationForm(target);
 }
 
-Form	*newRobotomyRequestForm(const std::string &target)
+Form*
+newRobotomyRequestForm(const std::string& target)
 {
-	return (new RobotomyRequestForm(target));
+	return new RobotomyRequestForm(target);
 }
 
-Form	*newPresidentialPardonForm(const std::string &target)
+Form*
+newPresidentialPardonForm(const std::string& target)
 {
-	return (new PresidentialPardonForm(target));
+	return new PresidentialPardonForm(target);
 }
 
-Form	*generateNewForm(Form *(*f)(const std::string &), const std::string &target)
+Form*
+generateNewForm(Form *(*f)(const std::string&), const std::string& target)
 {
-	return ((*f)(target));
+	return (*f)(target);
 }
 
-Form	*Intern::makeForm(const std::string &name, const std::string &target)
+Form*
+Intern::makeForm(const std::string& name, const std::string& target)
 {
 	int			index;
 	Form		*form = nullptr;

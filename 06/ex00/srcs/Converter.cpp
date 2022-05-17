@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:35:00 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:55:03 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 21:10:04 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,19 @@
 Converter::Converter(void)
 {
 	this->initValues();
-	return ;
 }
 
-Converter::Converter(const Converter &src)
+Converter::Converter(const Converter& x)
 {
-	this->_selected_type = src._selected_type;
-	this->_value_as_char = src._value_as_char;
-	this->_value_as_int = src._value_as_int;
-	this->_value_as_float = src._value_as_float;
-	this->_value_as_double = src._value_as_double;
-	return ;
+	this->_selected_type = x._selected_type;
+	this->_value_as_char = x._value_as_char;
+	this->_value_as_int = x._value_as_int;
+	this->_value_as_float = x._value_as_float;
+	this->_value_as_double = x._value_as_double;
 }
 
-Converter	&Converter::operator=(const Converter &rhs)
+Converter&
+Converter::operator=(const Converter &rhs)
 {
 	this->_selected_type = rhs._selected_type;
 	this->_value_as_char = rhs._value_as_char;
@@ -43,10 +42,10 @@ Converter	&Converter::operator=(const Converter &rhs)
 
 Converter::~Converter(void)
 {
-	return ;
 }
 
-void	Converter::initValues(void)
+void
+Converter::initValues(void)
 {
 	this->_selected_type = typeNone;
 	this->_value_as_char = 0;
@@ -55,7 +54,8 @@ void	Converter::initValues(void)
 	this->_value_as_double = 0;
 }
 
-int	Converter::check_for_pseudo_literals(const std::string &str) const
+int
+Converter::check_for_pseudo_literals(const std::string &str) const
 {
 	int					i;
 	const std::string	pseudo_floats[4] = {"inff", "+inff", "-inff", "nanf"};
@@ -71,10 +71,11 @@ int	Converter::check_for_pseudo_literals(const std::string &str) const
 	return (typeNone);
 }
 
-int	Converter::get_numeric_value_type(const std::string &str) const
+int
+Converter::get_numeric_value_type(const std::string &str) const
 {
-	int		i;
-	size_t	nbdots;
+	int    i;
+	size_t nbdots;
 
 	i = 0;
 	if (str[0] == '-' && str[1])
@@ -101,7 +102,8 @@ int	Converter::get_numeric_value_type(const std::string &str) const
 	return (typeNone);
 }
 
-bool	Converter::getType(const std::string &str)
+bool
+Converter::getType(const std::string &str)
 {
 	// int, float, double
 	this->_selected_type = check_for_pseudo_literals(str);
@@ -121,7 +123,8 @@ bool	Converter::getType(const std::string &str)
 	return (true);
 }
 
-void	Converter::setVariables(const std::string &str)
+void
+Converter::setVariables(const std::string &str)
 {
 	if(this->_selected_type == typeChar)
 	{
@@ -151,7 +154,8 @@ void	Converter::setVariables(const std::string &str)
 	}
 }
 
-void	Converter::printAsChar(void) const
+void
+Converter::printAsChar(void) const
 {
 	std::cout << "char: ";
 	if (this->_selected_type == typeChar)
@@ -167,7 +171,8 @@ void	Converter::printAsChar(void) const
 	std::cout << std::endl;
 }
 
-void	Converter::printAsInt(void) const
+void
+Converter::printAsInt(void) const
 {
 	std::cout << "int: ";
 	if (this->_selected_type == typeChar)
@@ -183,7 +188,9 @@ void	Converter::printAsInt(void) const
 	std::cout << std::endl;
 }
 
-static const char *dot_zero(double n)
+static inline
+const char
+*dot_zero(double n)
 {
 	if (n - static_cast<int>(n) == 0.0)
 		return (".0");
@@ -222,7 +229,8 @@ void	Converter::printAsDouble(void) const
 	std::cout << std::endl;
 }
 
-void	Converter::printTypes(void) const
+void
+Converter::printTypes(void) const
 {
 	if (this->_selected_type == typeNone)
 		return ;
@@ -232,7 +240,8 @@ void	Converter::printTypes(void) const
 	this->printAsDouble();
 }
 
-int	Converter::convert(const std::string str)
+int
+Converter::convert(const std::string str)
 {
 	if (!this->getType(str))
 	{

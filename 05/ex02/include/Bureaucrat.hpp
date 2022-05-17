@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:29 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/31 11:35:11 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:34:37 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,37 +21,37 @@ class Form;
 
 class Bureaucrat
 {
-	private:
-		Bureaucrat(void);
+	const std::string	_name;
+	int					_grade;
 
-		const std::string	_name;
-		int					_grade;
+public:
+	Bureaucrat(const std::string&, int);
+	Bureaucrat(const Bureaucrat&);
+	Bureaucrat& operator=(const Bureaucrat&);
+	~Bureaucrat();
 
+	const std::string& getName() const;
+	int                getGrade() const;
+	void               incrementGrade();
+	void               decrementGrade();
+	void               signForm(Form&) const;
+	void               executeForm(Form&) const;
+
+public:
+	struct GradeTooHighException: public std::exception
+	{
 	public:
-		Bureaucrat(const std::string &, int);
-		Bureaucrat(const Bureaucrat &);
-		Bureaucrat	& operator=(const Bureaucrat &);
-		~Bureaucrat(void);
+		virtual const char *what() const throw();
+	};
 
-		std::string const	&getName(void)const;
-		int					getGrade(void)const;
-
-		void				incrementGrade(void);
-		void				decrementGrade(void);
-
-		void				signForm(Form &) const;
-		void				executeForm(Form &) const;
-
+	class GradeTooLowException: public std::exception
+	{
 	public:
-		class GradeTooHighException: public std::exception {
-			public:
-				virtual const char *what() const throw();
-		};
+		virtual const char *what() const throw();
+	};
 
-		class GradeTooLowException: public std::exception {
-			public:
-				virtual const char *what() const throw();
-		};
+private:
+	Bureaucrat();
 };
 
 std::ostream	& operator<<(std::ostream &, const Bureaucrat &);

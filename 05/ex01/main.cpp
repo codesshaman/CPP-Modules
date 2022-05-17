@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:35:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/15 18:03:12 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:20:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Form.hpp"
 #include <iostream>
 
-int	main(void)
+int	main()
 {
 	{
 		Form	form("form1", 10, 3);

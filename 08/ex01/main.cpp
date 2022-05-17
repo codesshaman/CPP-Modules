@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:27:15 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/22 16:28:14 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 21:40:55 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ int	main(void)
 		Span	span2(20000);
 
 		span1.addNumber(2);
-		try {
+		try
+		{
 			std::cout << span1 << std::endl;
 		}
-		catch (std::exception &e) {
+		catch (std::exception& e)
+		{
 			std::cerr << e.what() << std::endl;
 		}
 
@@ -48,10 +50,12 @@ int	main(void)
 		span1.addNumber(42);
 		span1.addNumber(21);
 		std::cout << "'span1': " << span1 << std::endl;
-		try {
+		try
+		{
 			span1.addNumber(100);
 		}
-		catch (std::exception &e) {
+		catch (std::exception& e)
+		{
 			std::cerr << "could not add number: " << e.what() << std::endl;
 		}
 

@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:34:42 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/16 16:14:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/16 20:47:27 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,47 +15,48 @@
 #include <iostream>
 #include <cstdlib>
 
-RobotomyRequestForm::RobotomyRequestForm(void):
-	Form("RobotomyRequestForm", 72, 45), _target("")
+RobotomyRequestForm::RobotomyRequestForm()
+	: Form("RobotomyRequestForm", 72, 45),
+	  _target("")
 {
-	return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target):
-	Form("RobotomyRequestForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+	: Form("RobotomyRequestForm", 72, 45),
+	  _target(target)
 {
-	return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src):
-	Form("RobotomyRequestForm", 72, 45), _target(src._target)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &x)
+	: Form("RobotomyRequestForm", 72, 45),
+	  _target(x._target)
 {
-	return ;
 }
 
-RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
+RobotomyRequestForm&
+RobotomyRequestForm::operator=(const RobotomyRequestForm&)
 {
-	(void)rhs;
-	return (*this);
+	return *this;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm(void)
+RobotomyRequestForm::~RobotomyRequestForm()
 {
-	return ;
 }
 
-const std::string	&RobotomyRequestForm::getTarget(void) const
+const std::string&
+RobotomyRequestForm::getTarget() const
 {
-	return (this->_target);
+	return _target;
 }
 
-void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
+void
+RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
-	if (!this->isExecutable(executor))
+	if (!isExecutable(executor))
 		throw (Form::CannotExecuteException());
 	std::cout << "* frightful drill noises *" << std::endl;
 	if (std::rand() % 2)
-		std::cout << "Operation is a success. " << this->_target << " has been robotomized." << std::endl;
+		std::cout << "Operation is a success. " << _target << " has been robotomized." << std::endl;
 	else
 		std::cout << "Operation is a failure." << std::endl;
 	return ;
