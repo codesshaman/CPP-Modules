@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:46:57 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:42:51 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:45:31 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ Form::Form(const std::string &name, int min_sign, int min_exec)
 		throw (Form::GradeTooLowException());
 }
 
-Form::Form(const Form &x): _name(x._name), _is_signed(x._is_signed),
-	_min_grade_to_sign(x._min_grade_to_sign), _min_grade_to_execute(x._min_grade_to_execute)
+Form::Form(const Form &x)
+	: _name(x._name),
+	  _is_signed(x._is_signed),
+	  _min_grade_to_sign(x._min_grade_to_sign),
+	  _min_grade_to_execute(x._min_grade_to_execute)
 {
 }
 
@@ -62,38 +65,44 @@ Form::getGradeToSign() const
 	return _min_grade_to_sign;
 }
 
-int	Form::getGradeToExecute() const
+int
+Form::getGradeToExecute() const
 {
 	return _min_grade_to_execute;
 }
 
-bool	Form::isSigned() const
+bool
+Form::isSigned() const
 {
 	return _is_signed;
 }
 
-void	Form::incrementGradeToSign()
+void
+Form::incrementGradeToSign()
 {
 	if (_min_grade_to_sign <= 1)
 		throw (Form::GradeTooHighException());
 	_min_grade_to_sign--;
 }
 
-void	Form::incrementGradeToExecute()
+void
+Form::incrementGradeToExecute()
 {
 	if (_min_grade_to_execute <= 1)
 		throw (Form::GradeTooHighException());
 	_min_grade_to_execute--;
 }
 
-void	Form::decrementGradeToSign()
+void
+Form::decrementGradeToSign()
 {
 	if (_min_grade_to_sign >= 150)
 		throw (Form::GradeTooLowException());
 	_min_grade_to_sign++;	
 }
 
-void	Form::decrementGradeToExecute()
+void
+Form::decrementGradeToExecute()
 {
 	if (_min_grade_to_execute >= 150)
 		throw (Form::GradeTooLowException());
@@ -101,7 +110,8 @@ void	Form::decrementGradeToExecute()
 	return ;	
 }
 
-bool	Form::beSigned(const Bureaucrat &b)
+bool
+Form::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() > _min_grade_to_sign)
 		throw (Form::GradeTooLowException());
@@ -112,13 +122,13 @@ bool	Form::beSigned(const Bureaucrat &b)
 const char*
 Form::GradeTooHighException::what() const throw()
 {
-	return ("grade too high");
+	return ("form: grade too high");
 }
 
 const char*
 Form::GradeTooLowException::what() const throw()
 {
-	return ("grade too low");
+	return ("form: grade too low");
 }
 
 std::ostream&

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:04 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/19 12:32:02 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:27:40 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat &x)
 	: _name(x._name),
 	  _grade(x._grade)
 {
-	if (this->_grade < 1)
+	if (_grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
-	if (this->_grade > 150)
+	if (_grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
 //	std::cout << "Copied " << x._name << "'s grade to " << this->_name;
 }
@@ -107,13 +107,13 @@ void	Bureaucrat::executeForm(Form &f) const
 const char*
 Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("grade too high");
+	return ("bureaucrat: grade too high");
 }
 
 const char*
 Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("grade too low");
+	return ("bureaucrat: grade too low");
 }
 
 std::ostream&

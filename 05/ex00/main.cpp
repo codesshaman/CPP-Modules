@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:35:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/17 14:45:15 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:32:40 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ int	main()
 		bob.incrementGrade();
 		std::cout << bob << std::endl;
 
-		try {
+		try
+		{
 			std::cout << "> Incrementing " << bob.getName() << "'s grade (currently " << bob.getGrade() << ")" << std::endl;
 			bob.incrementGrade();
 		}
-		catch (std::exception& e) {
+		catch (std::exception& e)
+		{
 			std::cerr << "> Could not increment grade: " << e.what() << std::endl;
 		}
 	}
@@ -54,10 +56,21 @@ int	main()
 
 		delete (jim);
 	}
-//	This should throw an error
-	try {
-		Bureaucrat bob("bob", 175);
+	std::cout << "----------" << std::endl;
+	{
+		try	{
+			Bureaucrat bob("bob", 0);
+		}
+		catch (std::exception& e) {
+			std::cerr << e.what() << std::endl;
+		}
+
+		try	{
+			Bureaucrat bob("bob", 175);
+		}
+		catch (std::exception& e) {
+			std::cerr << e.what() << std::endl;
+		}
 	}
-	catch (...) {std::cout << "error!\n";}
 	return (0);
 }

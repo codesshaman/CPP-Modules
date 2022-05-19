@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:46:57 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:44:48 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:34:24 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,13 +122,13 @@ Form::beSigned(const Bureaucrat &b)
 const char*
 Form::GradeTooHighException::what() const throw()
 {
-	return ("grade too high");
+	return ("form: grade too high");
 }
 
 const char*
 Form::GradeTooLowException::what() const throw()
 {
-	return ("grade too low");
+	return ("form: grade too low");
 }
 
 std::ostream&

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:04 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:55:58 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:27:40 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,13 +109,13 @@ Bureaucrat::executeForm(Form& f) const
 const char*
 Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("grade too high");
+	return ("bureaucrat: grade too high");
 }
 
 const char*
 Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("grade too low");
+	return ("bureaucrat: grade too low");
 }
 
 std::ostream&

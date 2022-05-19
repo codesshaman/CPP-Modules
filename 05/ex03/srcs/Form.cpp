@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:46:57 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:58:37 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:34:15 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ Form::Form(const std::string &name, int min_sign, int min_exec)
 	  _min_grade_to_sign(min_sign),
 	  _min_grade_to_execute(min_exec)
 {
-	if (this->_min_grade_to_sign < 1 || this->_min_grade_to_execute < 1)
+	if (_min_grade_to_sign < 1 || _min_grade_to_execute < 1)
 		throw (Form::GradeTooHighException());
-	if (this->_min_grade_to_sign > 150 || this->_min_grade_to_execute > 150)
+	if (_min_grade_to_sign > 150 || _min_grade_to_execute > 150)
 		throw (Form::GradeTooLowException());
 }
 
@@ -122,13 +122,13 @@ Form::beSigned(const Bureaucrat& b)
 const char*
 Form::GradeTooHighException::what() const throw()
 {
-	return ("grade too high");
+	return ("form: grade too high");
 }
 
 const char*
 Form::GradeTooLowException::what() const throw()
 {
-	return ("grade too low");
+	return ("form: grade too low");
 }
 
 std::ostream&
