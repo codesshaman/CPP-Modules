@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:02:59 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:08:24 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:33:40 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ private:
 	bool getType(const std::string&);
 	int  check_for_pseudo_literals(const std::string& str) const;
 	int  get_numeric_value_type(const std::string& str) const;
-	void setVariables(const std::string& str);
+	void setVariables(const char *str);
 	void printTypes(void) const;
 	void printAsChar(void) const;
 	void printAsInt(void) const;
@@ -52,7 +52,7 @@ public:
 	Converter& operator=(const Converter&);
 	~Converter(void);
 
-	int convert(const std::string);
+	int convert(const char *str);
 };
 
 #endif /* CONVERT_HPP */

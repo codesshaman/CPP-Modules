@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:35:00 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:10:04 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:33:27 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ Converter::getType(const std::string &str)
 }
 
 void
-Converter::setVariables(const std::string &str)
+Converter::setVariables(const char *str)
 {
 	if(this->_selected_type == typeChar)
 	{
@@ -133,21 +133,21 @@ Converter::setVariables(const std::string &str)
 	}
 	if (this->_selected_type == typeInt)
 	{
-		try	{ this->_value_as_int = std::stoi(str); }
+		try	{ this->_value_as_int = atoi(str); }
 		catch (std::exception &e) {
 			this->_selected_type = typeFloat;
 		}
 	}
 	if (this->_selected_type == typeFloat)
 	{
-		try { this->_value_as_float = std::stof(str); }
+		try { this->_value_as_float = atof(str); }
 		catch (std::exception &e) {
 			this->_selected_type = typeDouble;
 		}
 	}
 	if (this->_selected_type == typeDouble)
 	{
-		try { this->_value_as_double = std::stod(str); }
+		try { this->_value_as_double = atof(str); }
 		catch (std::exception &e) {
 			this->_selected_type = typeImpossible;
 		}
@@ -241,7 +241,7 @@ Converter::printTypes(void) const
 }
 
 int
-Converter::convert(const std::string str)
+Converter::convert(const char *str)
 {
 	if (!this->getType(str))
 	{
