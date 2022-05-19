@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:35:00 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/19 12:33:27 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:37:28 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,31 +127,13 @@ void
 Converter::setVariables(const char *str)
 {
 	if(this->_selected_type == typeChar)
-	{
 		this->_value_as_char = str[0];
-		return ;
-	}
-	if (this->_selected_type == typeInt)
-	{
-		try	{ this->_value_as_int = atoi(str); }
-		catch (std::exception &e) {
-			this->_selected_type = typeFloat;
-		}
-	}
-	if (this->_selected_type == typeFloat)
-	{
-		try { this->_value_as_float = atof(str); }
-		catch (std::exception &e) {
-			this->_selected_type = typeDouble;
-		}
-	}
-	if (this->_selected_type == typeDouble)
-	{
-		try { this->_value_as_double = atof(str); }
-		catch (std::exception &e) {
-			this->_selected_type = typeImpossible;
-		}
-	}
+	else if (this->_selected_type == typeInt)
+		this->_value_as_int = atoi(str);
+	else if (this->_selected_type == typeFloat)
+		this->_value_as_float = atof(str);
+	else if (this->_selected_type == typeDouble)
+		this->_value_as_double = atof(str);
 }
 
 void
