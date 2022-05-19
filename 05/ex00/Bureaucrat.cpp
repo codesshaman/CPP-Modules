@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:04 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/17 14:40:53 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:31:47 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Bureaucrat&
 Bureaucrat::operator=(const Bureaucrat &x)
 {
 	this->_grade = x._grade;
-	return (*this);
+	return *this;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -50,29 +50,29 @@ Bureaucrat::~Bureaucrat()
 const std::string&
 Bureaucrat::getName() const
 {
-	return this->_name;
+	return _name;
 }
 
 int
 Bureaucrat::getGrade() const
 {
-	return this->_grade;
+	return _grade;
 }
 
 void
 Bureaucrat::incrementGrade()
 {
-	if (this->_grade <= 1)
+	if (_grade <= 1)
 		throw (Bureaucrat::GradeTooHighException());
-	this->_grade--;
+	_grade--;
 }
 
 void
 Bureaucrat::decrementGrade()
 {
-	if (this->_grade >= 150)
+	if (_grade >= 150)
 		throw (Bureaucrat::GradeTooLowException());
-	this->_grade++;
+	_grade++;
 }
 
 const char*

@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:04 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:42:51 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:32:02 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	: _name(name),
 	  _grade(grade)
 {
-	if (this->_grade < 1)
+	if (_grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
-	if (this->_grade > 150)
+	if (_grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
 //	std::cout << "Created bureaucrat " << this->_name << " with grade " << this->_grade << std::endl;
 }
