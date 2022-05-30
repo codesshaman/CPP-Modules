@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 20:57:49 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:11:30 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 14:29:04 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 class Base
 {
 public:
-	Base(void);
-	virtual ~Base(void);
+	Base();
+	virtual ~Base();
 };
 
 #endif /* BASE_HPP */

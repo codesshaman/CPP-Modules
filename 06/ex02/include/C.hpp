@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 20:59:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:11:33 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 14:29:04 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class C : public Base
 {
 public:
-	~C(void);
+	~C();
 };
 
 #endif /* C_HPP */

@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:35:00 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/30 14:22:07 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 14:29:04 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <limits>
 
-Converter::Converter(void)
+Converter::Converter()
 	: _selected_type(typeNone),
 	  _value_as_char(0),
 	  _value_as_int(0),
@@ -45,7 +45,7 @@ Converter::operator=(const Converter &rhs)
 	return (*this);
 }
 
-Converter::~Converter(void)
+Converter::~Converter()
 {
 }
 
@@ -152,7 +152,7 @@ Converter::setVariables(const char *str)
 }
 
 void
-Converter::printAsChar(void) const
+Converter::printAsChar() const
 {
 	std::cout << "char: ";
 	if (this->_selected_type == typeChar)
@@ -169,7 +169,7 @@ Converter::printAsChar(void) const
 }
 
 void
-Converter::printAsInt(void) const
+Converter::printAsInt() const
 {
 	std::cout << "int: ";
 	if (this->_selected_type == typeChar)
@@ -194,7 +194,7 @@ const char
 	return ("");
 }
 
-void	Converter::printAsFloat(void) const
+void	Converter::printAsFloat() const
 {
 	std::cout << "float: ";
 	if (this->_selected_type == typeChar)
@@ -210,7 +210,7 @@ void	Converter::printAsFloat(void) const
 	std::cout << std::endl;
 }
 
-void	Converter::printAsDouble(void) const
+void	Converter::printAsDouble() const
 {
 	std::cout << "double: ";
 	if (this->_selected_type == typeChar)
@@ -227,7 +227,7 @@ void	Converter::printAsDouble(void) const
 }
 
 void
-Converter::printTypes(void) const
+Converter::printTypes() const
 {
 	if (this->_selected_type == typeNone)
 		return ;

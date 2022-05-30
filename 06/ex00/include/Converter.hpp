@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:02:59 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/30 13:10:24 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 14:29:04 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ private:
 	Type check_for_pseudo_literals(const std::string& str) const;
 	Type get_numeric_value_type(const std::string& str) const;
 	void setVariables(const char *str);
-	void printTypes(void) const;
-	void printAsChar(void) const;
-	void printAsInt(void) const;
-	void printAsFloat(void) const;
-	void printAsDouble(void) const;
+	void printTypes() const;
+	void printAsChar() const;
+	void printAsInt() const;
+	void printAsFloat() const;
+	void printAsDouble() const;
 
 public:
-	Converter(void);
+	Converter();
 	Converter(const Converter&);
 	Converter& operator=(const Converter&);
-	~Converter(void);
+	~Converter();
 
 	int convert(const char *str);
 };

@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 20:43:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:11:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 14:29:49 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Data	*deserialize(uintptr_t raw)
 	return (reinterpret_cast<struct Data *>(raw));
 }
 
-int	main(void)
+int	main()
 {
 	{
 		struct Data	d;
@@ -56,6 +56,7 @@ int	main(void)
 		raw = serialize(ptr);
 		new_ptr = deserialize(raw);
 		assert(ptr == new_ptr);
+		delete (d);
 	}
 	return (0);
 }

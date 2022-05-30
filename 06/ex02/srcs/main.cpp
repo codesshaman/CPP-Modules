@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:01:52 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/30 14:24:32 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:02:35 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@
 #include <cstdlib>
 #include <iostream>
 
-Base	*generate(void)
+Base	*generate()
 {
-	int		n = (rand() % 3) + 1;
-
-	switch (n)
+	switch (rand() % 3)
 	{
-		case 1:
+		case 0:
 			std::cout << "Generated a new A" << std::endl;
 			return (new A());
-		case 2:
+		case 1:
 			std::cout << "Generated a new B" << std::endl;
 			return (new B());
 		default:
@@ -38,24 +36,33 @@ Base	*generate(void)
 void	identify(Base &p)
 {
 	std::cout << "by ref: ";
-	try {
+	try
+	{
 		A	&a = dynamic_cast<A &>(p);
 		std::cout << "object type is A" << std::endl;
 		(void)a;
 	}
-	catch (std::exception){}
-	try {
+	catch (std::exception)
+	{
+	}
+	try
+	{
 		B	&b = dynamic_cast<B &>(p);
 		std::cout << "object type is B" << std::endl;
 		(void)b;
 	}
-	catch (std::exception){}
-	try {
+	catch (std::exception)
+	{
+	}
+	try
+	{
 		C	&c = dynamic_cast<C &>(p);
 		std::cout << "object type is C" << std::endl;
 		(void)c;
 	}
-	catch (std::exception){}
+	catch (std::exception)
+	{
+	}
 }
 
 void	identify(Base *p)
@@ -65,25 +72,22 @@ void	identify(Base *p)
 	C	*c;
 
 	std::cout << "by ptr: ";
-	if ((a = dynamic_cast<A *>(p)))
+	if ((a = dynamic_cast<A*>(p)))
 		std::cout << "object type is A" << std::endl;
-	if ((b = dynamic_cast<B *>(p)))
+	if ((b = dynamic_cast<B*>(p)))
 		std::cout << "object type is B" << std::endl;
-	if ((c = dynamic_cast<C *>(p)))
+	if ((c = dynamic_cast<C*>(p)))
 		std::cout << "object type is C" << std::endl;
 }
 
-int	main(void)
+int	main()
 {
-	Base	*base;
-
 	srand(time(NULL));
-
-	base = generate();
-	identify(base);
-	identify(*base);
-
-	delete (base);
-
+	{
+		Base	*base = generate();
+		identify(base);
+		identify(*base);
+		delete (base);
+	}
 	return (0);
 }
