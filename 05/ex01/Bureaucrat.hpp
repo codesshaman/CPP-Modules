@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:29 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/19 14:42:42 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:00:28 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Form;
 class Bureaucrat
 {
 private:
-	const std::string	_name;
-	int					_grade;
+	const std::string _name;
+	int               _grade;
 
 public:
 	Bureaucrat(const std::string&, int);

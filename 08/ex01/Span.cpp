@@ -6,14 +6,13 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:37:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:44:50 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:11:05 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
 #include <algorithm>
-#include <iterator>
 #include <limits>
 #include <stdexcept>
 #include <cstdlib>

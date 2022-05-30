@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:35:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:20:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 12:46:54 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 
 int	main()
 {
 	srand(time(NULL));
 	{
-		ShrubberyCreationForm	form("trees");
+		ShrubberyCreationForm	form("garden");
 		Bureaucrat				bob("Bob", 138);
 
 		std::cout << "> " << form << std::endl;
@@ -34,8 +34,8 @@ int	main()
 	}
 	std::cout << "----------------------------------" << std::endl;
 	{
-		RobotomyRequestForm	form("target2");
-		Bureaucrat			jim("Jim", 30);
+		RobotomyRequestForm		form("target2");
+		Bureaucrat				jim("Jim", 30);
 
 		jim.signForm(form);
 		jim.executeForm(form);

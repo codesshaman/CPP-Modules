@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:27:15 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:39:21 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:09:11 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 // test purposes
 template <class Tp>
-static
-void
+static inline void
 test_value(std::vector<int>& array, Tp& end, int value)
 {
 	Tp it = easyfind(array, value);

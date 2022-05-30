@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:25:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:15:37 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:06:35 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ swap(Tp& a, Tp& b)
 
 template <class Tp>
 const Tp&
-min(Tp &a, Tp &b)
+min(const Tp &a, const Tp &b)
 {
 	return (a < b ? a : b);
 }
 
 template <class Tp>
 const Tp&
-max(Tp& a, Tp& b)
+max(const Tp& a, const Tp& b)
 {
 	return (a > b ? a : b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:46:57 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/19 14:34:24 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:01:18 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,10 @@ Form::Form(const Form &x)
 {
 }
 
-Form	&Form::operator=(const Form &x)
+Form&
+Form::operator=(const Form &x)
 {
 	this->_is_signed = x._is_signed;
-	this->_min_grade_to_sign = x._min_grade_to_sign;
-	this->_min_grade_to_execute = x._min_grade_to_execute;
 	return (*this);
 }
 
@@ -78,38 +77,6 @@ Form::isSigned() const
 	return _is_signed;
 }
 
-void
-Form::incrementGradeToSign()
-{
-	if (_min_grade_to_sign <= 1)
-		throw (Form::GradeTooHighException());
-	_min_grade_to_sign--;
-}
-
-void
-Form::incrementGradeToExecute()
-{
-	if (_min_grade_to_execute <= 1)
-		throw (Form::GradeTooHighException());
-	_min_grade_to_execute--;
-}
-
-void
-Form::decrementGradeToSign()
-{
-	if (_min_grade_to_sign >= 150)
-		throw (Form::GradeTooLowException());
-	_min_grade_to_sign++;
-}
-
-void
-Form::decrementGradeToExecute()
-{
-	if (_min_grade_to_execute >= 150)
-		throw (Form::GradeTooLowException());
-	_min_grade_to_execute++;
-}
-
 bool
 Form::beSigned(const Bureaucrat &b)
 {
@@ -131,6 +98,18 @@ Form::GradeTooLowException::what() const throw()
 	return ("form: grade too low");
 }
 
+bool
+Form::isExecutable(const Bureaucrat &executor) const
+{
+	return (_is_signed && executor.getGrade() <= _min_grade_to_execute);
+}
+
+const char*
+Form::CannotExecuteException::what() const throw()
+{
+	return ("form is not signed or the executor's grade is too low");
+}
+
 std::ostream&
 operator<<(std::ostream& o, const Form& f)
 {
@@ -141,16 +120,4 @@ operator<<(std::ostream& o, const Form& f)
 	else
 		o << "not signed.";
 	return (o);
-}
-
-bool
-Form::isExecutable(const Bureaucrat &executor) const
-{
-	return (_is_signed && executor.getGrade() <= _min_grade_to_execute);
-}
-
-const char*
-Form::CannotExecuteException::what() const throw()
-{
-	return ("file has to be signed; executor has to be graded high enough");
 }

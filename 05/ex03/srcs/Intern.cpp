@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:59:48 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/17 16:12:05 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 12:45:13 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,25 @@ Intern::~Intern()
 {
 }
 
-Form*
+static Form*
 newShrubberyCreationForm(const std::string& target)
 {
 	return new ShrubberyCreationForm(target);
 }
 
-Form*
+static Form*
 newRobotomyRequestForm(const std::string& target)
 {
 	return new RobotomyRequestForm(target);
 }
 
-Form*
+static Form*
 newPresidentialPardonForm(const std::string& target)
 {
 	return new PresidentialPardonForm(target);
 }
 
-Form*
+static Form*
 generateNewForm(Form *(*f)(const std::string&), const std::string& target)
 {
 	return (*f)(target);

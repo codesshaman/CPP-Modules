@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:35:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:20:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 12:46:51 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
+#include <cstdlib>
 #include <iostream>
 
 static void	test_intern(const std::string &type, const std::string &target)
@@ -28,18 +29,22 @@ static void	test_intern(const std::string &type, const std::string &target)
 	{
 		std::cout << *form << std::endl;
 		jim.signForm(*form);
+		form->execute(jim);
 	}
 	delete (form);
 }
 
 int	main()
 {
-	test_intern("shrubbery creation", "trees");
-	std::cout << "--------------" << std::endl;
+	srand(time(NULL));
+	test_intern("shrubbery creation", "garden");
+	std::cout << "----------------------------------" << std::endl;
 	test_intern("robotomy request", "Bender");
-	std::cout << "--------------" << std::endl;
-	test_intern("presidential pardon", "target");
-	std::cout << "--------------" << std::endl;
+	std::cout << "----------------------------------" << std::endl;
+	test_intern("presidential pardon", "Tom");
+	std::cout << "----------------------------------" << std::endl;
 	test_intern("unknown form", "target");
+	std::cout << "----------------------------------" << std::endl;
+	test_intern("test", "lol");
 	return (0);
 }

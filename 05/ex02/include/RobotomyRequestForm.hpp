@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 18:34:34 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 20:38:32 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:01:01 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ private:
 public:
 	RobotomyRequestForm(const std::string &);
 	RobotomyRequestForm(const RobotomyRequestForm &);
-	RobotomyRequestForm	& operator=(const RobotomyRequestForm &);
+	RobotomyRequestForm& operator=(const RobotomyRequestForm &);
 	~RobotomyRequestForm();
 
-	const std::string &getTarget() const;
+	const std::string& getTarget() const;
 	void               execute(const Bureaucrat &) const;
 
 private:

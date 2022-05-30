@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:52:35 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/17 16:11:30 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:05:42 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ ShrubberyCreationForm::getTarget() const
 	return _target;
 }
 
-void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
+void
+ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
 	std::ofstream	file;
 	std::string		file_path;
@@ -57,6 +58,11 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 		throw (Form::CannotExecuteException());
 	file_path = this->_target + "_shrubbery";
 	file.open(file_path.c_str(), std::fstream::out);
+	if (!file.is_open())
+	{
+		std::cerr << "Could not open file \'" << file_path << "\'" << std::endl;
+		return ;
+	}
 	file << "       _-_" << std::endl;
 	file << "    /~~   ~~\\" << std::endl;
 	file << " /~~         ~~\\" << std::endl;

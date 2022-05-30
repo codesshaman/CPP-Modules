@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:46:57 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/19 14:45:31 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 16:56:16 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ Form&
 Form::operator=(const Form &x)
 {
 	this->_is_signed = x._is_signed;
-	this->_min_grade_to_sign = x._min_grade_to_sign;
-	this->_min_grade_to_execute = x._min_grade_to_execute;
 	return *this;
 }
 
@@ -75,39 +73,6 @@ bool
 Form::isSigned() const
 {
 	return _is_signed;
-}
-
-void
-Form::incrementGradeToSign()
-{
-	if (_min_grade_to_sign <= 1)
-		throw (Form::GradeTooHighException());
-	_min_grade_to_sign--;
-}
-
-void
-Form::incrementGradeToExecute()
-{
-	if (_min_grade_to_execute <= 1)
-		throw (Form::GradeTooHighException());
-	_min_grade_to_execute--;
-}
-
-void
-Form::decrementGradeToSign()
-{
-	if (_min_grade_to_sign >= 150)
-		throw (Form::GradeTooLowException());
-	_min_grade_to_sign++;	
-}
-
-void
-Form::decrementGradeToExecute()
-{
-	if (_min_grade_to_execute >= 150)
-		throw (Form::GradeTooLowException());
-	_min_grade_to_execute++;
-	return ;	
 }
 
 bool

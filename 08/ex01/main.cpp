@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:27:15 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:40:55 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:13:15 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <vector>
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 
 int	main(void)
 {
@@ -32,7 +33,7 @@ int	main(void)
 	std::cout << "-------------" << std::endl;
 	{
 		Span	span1(5);
-		Span	span2(20000);
+		Span	span2(15000);
 
 		span1.addNumber(2);
 		try

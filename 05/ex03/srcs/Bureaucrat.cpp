@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ugdaniel <ugdaniel@42.student.fr>          +#+  +:+       +#+        */
+/*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:32:04 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/19 14:27:40 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 12:49:35 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
 		throw (Bureaucrat::GradeTooHighException());
 	if (_grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
-//	std::cout << "Created bureaucrat " << this->_name << " with grade " << this->_grade << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &x)
@@ -40,7 +39,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &x)
 		throw (Bureaucrat::GradeTooHighException());
 	if (_grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
-//	std::cout << "Copied " << x._name << "'s grade to " << this->_name;
 }
 
 Bureaucrat&
@@ -85,7 +83,8 @@ Bureaucrat::decrementGrade()
 void
 Bureaucrat::signForm(Form& f) const
 {
-	try {
+	try
+	{
 		f.beSigned(*this);
 		std::cout << "'" << this->getName() << "' signed form '" << f.getName() << "'." << std::endl;
 	}
@@ -97,7 +96,8 @@ Bureaucrat::signForm(Form& f) const
 void
 Bureaucrat::executeForm(Form& f) const
 {
-	try {
+	try
+	{
 		f.execute(*this);
 		std::cout << "'" << this->getName() << "' executed form '" << f.getName() << "'." << std::endl;
 	}
