@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:02:50 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/03/20 12:41:47 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 13:31:31 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,26 @@ bool	can_convert_to_char(double n)
 	return (false);
 }
 
-bool	can_convert_to_int(double n)
+bool	can_convert_to_int(double n, bool p)
 {
 	if (n >= std::numeric_limits<int>::min() && n <= std::numeric_limits<int>::max()
 		&& n != std::numeric_limits<double>::infinity()
 		&& n != -std::numeric_limits<double>::infinity()
 		&& n != std::numeric_limits<double>::quiet_NaN())
 		return (true);
-	std::cout << "impossible";
+	if (p)
+		std::cout << "impossible";
 	return (false);
 }
 
-bool	can_convert_to_float(double n)
+bool	can_convert_to_float(double n, bool p)
 {
 	if ((n >= -std::numeric_limits<float>::max() && n <= std::numeric_limits<float>::max())
 		|| n == std::numeric_limits<double>::infinity()
 		|| n == -std::numeric_limits<double>::infinity()
 		|| std::isnan(n))
 		return (true);
-	std::cout << "impossible";
+	if (p)
+		std::cout << "impossible";
 	return (false);
 }

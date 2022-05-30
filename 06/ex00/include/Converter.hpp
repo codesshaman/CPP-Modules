@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:02:59 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/19 12:33:40 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 13:10:24 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,16 @@ private:
 		typeImpossible
 	};
 
-	int8_t _selected_type;
+	Type   _selected_type;
 	char   _value_as_char;
 	int    _value_as_int;
 	float  _value_as_float;
 	double _value_as_double;
 
 private:
-	void initValues(void);
 	bool getType(const std::string&);
-	int  check_for_pseudo_literals(const std::string& str) const;
-	int  get_numeric_value_type(const std::string& str) const;
+	Type check_for_pseudo_literals(const std::string& str) const;
+	Type get_numeric_value_type(const std::string& str) const;
 	void setVariables(const char *str);
 	void printTypes(void) const;
 	void printAsChar(void) const;

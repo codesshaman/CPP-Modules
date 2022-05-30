@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:01:52 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/04/04 18:36:14 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 14:24:32 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <random>
+#include <cstdlib>
 #include <iostream>
 
 Base	*generate(void)

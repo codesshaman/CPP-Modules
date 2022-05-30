@@ -6,27 +6,32 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:35:00 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/19 12:37:28 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/05/30 14:22:07 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Converter.hpp"
 #include "utils.hpp"
+#include <cstdlib>
 #include <iostream>
-#include <string>	// std::stof, std::stod
+#include <limits>
 
 Converter::Converter(void)
+	: _selected_type(typeNone),
+	  _value_as_char(0),
+	  _value_as_int(0),
+	  _value_as_float(0.f),
+	  _value_as_double(0)
 {
-	this->initValues();
 }
 
 Converter::Converter(const Converter& x)
+	: _selected_type(x._selected_type),
+	  _value_as_char(x._value_as_char),
+	  _value_as_int(x._value_as_int),
+	  _value_as_float(x._value_as_float),
+	  _value_as_double(x._value_as_double)
 {
-	this->_selected_type = x._selected_type;
-	this->_value_as_char = x._value_as_char;
-	this->_value_as_int = x._value_as_int;
-	this->_value_as_float = x._value_as_float;
-	this->_value_as_double = x._value_as_double;
 }
 
 Converter&
@@ -44,17 +49,7 @@ Converter::~Converter(void)
 {
 }
 
-void
-Converter::initValues(void)
-{
-	this->_selected_type = typeNone;
-	this->_value_as_char = 0;
-	this->_value_as_int = 0;
-	this->_value_as_float = 0;
-	this->_value_as_double = 0;
-}
-
-int
+Converter::Type
 Converter::check_for_pseudo_literals(const std::string &str) const
 {
 	int					i;
@@ -71,7 +66,7 @@ Converter::check_for_pseudo_literals(const std::string &str) const
 	return (typeNone);
 }
 
-int
+Converter::Type
 Converter::get_numeric_value_type(const std::string &str) const
 {
 	int    i;
@@ -129,9 +124,29 @@ Converter::setVariables(const char *str)
 	if(this->_selected_type == typeChar)
 		this->_value_as_char = str[0];
 	else if (this->_selected_type == typeInt)
-		this->_value_as_int = atoi(str);
+	{
+		if (can_convert_to_int(atof(str), 0))
+		{
+			this->_value_as_int = atoi(str);
+		}
+		else
+		{
+			this->_value_as_int = 0;
+			_selected_type = typeDouble;
+			setVariables(str);
+		}
+	}
 	else if (this->_selected_type == typeFloat)
-		this->_value_as_float = atof(str);
+	{
+		if (can_convert_to_float(atof(str), 0))
+			this->_value_as_float = atof(str);
+		else
+		{
+			this->_value_as_float = 0;
+			_selected_type = typeDouble;
+			setVariables(str);
+		}
+	}
 	else if (this->_selected_type == typeDouble)
 		this->_value_as_double = atof(str);
 }
@@ -141,7 +156,7 @@ Converter::printAsChar(void) const
 {
 	std::cout << "char: ";
 	if (this->_selected_type == typeChar)
-		std::cout << this->_value_as_char;
+		std::cout << "\'" << this->_value_as_char << "\'";
 	else if (this->_selected_type == typeInt && can_convert_to_char(this->_value_as_int))
 		std::cout << static_cast<char>(this->_value_as_int);
 	else if (this->_selected_type == typeFloat && can_convert_to_char(this->_value_as_float))
@@ -161,9 +176,9 @@ Converter::printAsInt(void) const
 		std::cout << static_cast<int>(this->_value_as_char);
 	else if (this->_selected_type == typeInt)
 		std::cout << this->_value_as_int;
-	else if (this->_selected_type == typeFloat && can_convert_to_int(this->_value_as_float))
+	else if (this->_selected_type == typeFloat && can_convert_to_int(this->_value_as_float, 1))
 		std::cout << static_cast<int>(this->_value_as_float);
-	else if (this->_selected_type == typeDouble && can_convert_to_int(this->_value_as_double))
+	else if (this->_selected_type == typeDouble && can_convert_to_int(this->_value_as_double, 1))
 		std::cout << static_cast<int>(this->_value_as_double);
 	else if (this->_selected_type == typeImpossible)
 		std::cout << "impossible";
@@ -188,7 +203,7 @@ void	Converter::printAsFloat(void) const
 		std::cout << static_cast<float>(this->_value_as_int) << ".0f";
 	else if (this->_selected_type == typeFloat)
 		std::cout << (this->_value_as_float) << dot_zero(this->_value_as_float) << "f";
-	else if (this->_selected_type == typeDouble && can_convert_to_float(this->_value_as_double))
+	else if (this->_selected_type == typeDouble && can_convert_to_float(this->_value_as_double, 1))
 		std::cout << (this->_value_as_double) << dot_zero(this->_value_as_double) << "f";
 	else if (this->_selected_type == typeImpossible)
 		std::cout << "impossible";
