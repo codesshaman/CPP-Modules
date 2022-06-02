@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 11:50:08 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/30 15:57:37 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:02:15 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ public:
 	Array& operator=(const Array& x);
 	Tp& operator[](const unsigned int index) const;
 
-	
-
 	unsigned int size() const
 		{return _size;}
 };
@@ -61,7 +59,6 @@ Array<Tp>::Array(const Array& x)
 	_begin = new Tp[x._size];
 	for (_size = 0; _size < x._size; _size++)
 		_begin[_size] = x._begin[_size];
-	return *this;
 }
 
 template <class Tp>

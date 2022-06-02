@@ -6,21 +6,20 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:27:15 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/30 17:09:11 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:20:46 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
-#include <vector>
 #include <iostream>
+#include <vector>
 
 // test purposes
 template <class Tp>
 static inline void
-test_value(std::vector<int>& array, Tp& end, int value)
+test_value(std::vector<Tp>& v, Tp value)
 {
-	Tp it = easyfind(array, value);
-	if (it != end)
+	if (easyfind(v, value) != v.end())
 		std::cout << "value " << value << " found" << std::endl;
 	else
 		std::cout << "no occurence found for value " << value << std::endl;
@@ -28,22 +27,25 @@ test_value(std::vector<int>& array, Tp& end, int value)
 
 int	main(void)
 {
-	std::vector<int> array;
+	std::vector<int> v;
 
-	// fill array with values
+	// fill vector with values
+	v.reserve(5);
 	for (int i = 0; i < 5; i++)
-		array.push_back(i * 42);
-	std::vector<int>::iterator end = array.end();
-	for (std::vector<int>::iterator it = array.begin(); it != end; it++)
-		std::cout << "array[i]: " << *it << std::endl;
+	{
+		v.push_back(i * 42);
+		std::cout << "v[" << i << "]: " << v[i] << std::endl;
+	}
 	std::cout << "----------------" << std::endl;
 
-	// find values in array
-	test_value(array, end, 42);
-	test_value(array, end, 84);
-	test_value(array, end, 85);
-	test_value(array, end, 0);
-	test_value(array, end, 100);
+	// find values in vector
+	test_value(v, 0);
+	test_value(v, 42);
+	test_value(v, 84);
+	test_value(v, 85);
+	test_value(v, 100);
+	test_value(v, 168);
+	test_value(v, 99999);
 
 	return (0);
 }
