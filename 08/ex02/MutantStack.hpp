@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 18:12:36 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/30 17:10:39 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:42:42 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <stack>
 
 template <class Tp>
-class MutantStack : public std::stack<Tp>
+class MutantStack
+	: public std::stack<Tp>
 {
 public:
 	typedef typename

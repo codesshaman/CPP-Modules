@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:37:20 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/30 17:11:05 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:29:23 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,16 @@ Span::shortestSpan(void) const
 
 	if (numbers.size() <= 1)
 		throw std::logic_error("not enough numbers to return a span");
-	int ret = -1;
-	for (std::vector<int>::iterator it = numbers.begin(); it + 1 != numbers.end(); it++)
+	std::sort(numbers.begin(), numbers.end());
+	int ret = *(numbers.begin() + 1) - *(numbers.begin());
+	if (_max_size == 2)
+		return (ret);
+	for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end() - 1 && ret != 0; it++)
 	{
-		for (std::vector<int>::iterator it2 = it + 1; it2 != numbers.end(); it2++)
-		{
-			int tmp = *it2 > *it ? *it2 - *it : *it - *it2;
-			if (ret == -1 || tmp < ret)
-				ret = tmp;
-		}
+		if (*(it + 1) - *it < ret)
+			ret = *(it + 1) - *it;
 	}
-	return (ret);
+	return ret;
 }
 
 int
@@ -81,17 +80,8 @@ Span::longestSpan(void) const
 
 	if (numbers.size() <= 1)
 		throw std::logic_error("not enough numbers to return a span");
-	int ret = -1;
-	for (std::vector<int>::iterator it = numbers.begin(); it + 1 != numbers.end(); it++)
-	{
-		for (std::vector<int>::iterator it2 = it + 1; it2 != numbers.end(); it2++)
-		{
-			int tmp = *it2 > *it ? *it2 - *it : *it - *it2;
-			if (ret == -1 || tmp > ret)
-				ret = tmp;
-		}
-	}
-	return (ret);
+	std::sort(numbers.begin(), numbers.end());
+	return *(numbers.end() - 1) - *(numbers.begin());
 }
 
 void
@@ -100,6 +90,13 @@ Span::fillRandomNumbers(void)
 	int nb_left = this->_max_size - this->getSize();
 	for (int i = 0; i < nb_left; i++)
 		this->addNumber(rand() % 42 + 1);
+}
+
+void
+Span::rangeFill(iterator first, iterator last)
+{
+	for (; first != last; first++)
+		addNumber(*first);
 }
 
 unsigned int

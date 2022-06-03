@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 21:10:37 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/06/02 15:19:26 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:43:42 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <algorithm>
 
-template <class Tp>
-typename Tp::iterator
-easyfind(Tp& container, int nb)
+template <class T>
+typename T::iterator
+easyfind(T& container, int nb)
 {
 	return (std::find(container.begin(), container.end(), nb));
 }

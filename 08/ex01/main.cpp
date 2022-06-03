@@ -6,22 +6,21 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:27:15 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/30 17:13:15 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:34:00 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <vector>
-#include <iostream>
-#include <ctime>
 #include <cstdlib>
+#include <ctime>
+#include <iostream>
+#include <vector>
 
 int	main(void)
 {
-	srand((unsigned) time(0));
+	srand(time(0));
 	{
 		Span sp = Span(5);
-
 		sp.addNumber(6);
 		sp.addNumber(3);
 		sp.addNumber(17);
@@ -32,36 +31,21 @@ int	main(void)
 	}
 	std::cout << "-------------" << std::endl;
 	{
-		Span	span1(5);
-		Span	span2(15000);
+		std::vector<int>	v;
+		Span				sp2(10);
 
-		span1.addNumber(2);
-		try
-		{
-			std::cout << span1 << std::endl;
-		}
-		catch (std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+		v.reserve(5);
+		for (int i = 0; i < 10; i++)
+			v.push_back(i * 42);
+		sp2.rangeFill(v.begin(), v.end());
+		std::cout << sp2 << std::endl;
+	}
+	std::cout << "-------------" << std::endl;
+	{
+		Span	sp(20000);
 
-		span1.addNumber(5);
-		span1.addNumber(10);
-		std::cout << "'span1': " << span1 << std::endl;
-		span1.addNumber(42);
-		span1.addNumber(21);
-		std::cout << "'span1': " << span1 << std::endl;
-		try
-		{
-			span1.addNumber(100);
-		}
-		catch (std::exception& e)
-		{
-			std::cerr << "could not add number: " << e.what() << std::endl;
-		}
-
-		span2.fillRandomNumbers();
-		std::cout << "'span2': " << span2 << std::endl;
+		sp.fillRandomNumbers();
+		std::cout << sp << std::endl;
 	}
 
 	return (0);

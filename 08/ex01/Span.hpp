@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:35:07 by ugdaniel          #+#    #+#             */
-/*   Updated: 2022/05/16 21:45:41 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:29:01 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 class Span
 {
 private:
+	typedef std::vector<int>::iterator iterator;
+
 	unsigned int     _max_size;
 	std::vector<int> _numbers;
 
@@ -30,14 +32,14 @@ public:
 	~Span(void);
 
 	void         addNumber(int);
-	void         fillRandomNumbers(void);
 	int          shortestSpan(void) const;
 	int          longestSpan(void) const;
 	int          getSize(void) const;
 	unsigned int getMaxSize(void) const;
+	void         fillRandomNumbers(void);
+	void         rangeFill(iterator first, iterator last);
 };
 
-std::ostream&
-operator<<(std::ostream &, const Span &);
+std::ostream& operator<<(std::ostream &, const Span &);
 
 #endif /* SPAN_HPP */
